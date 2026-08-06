@@ -1,1 +1,125 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <title>Next Round – Partie App</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Next Round – Die smarte Partie-App für eure Runden. Organisiert Spieler, Punkte und Runden automatisch." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="site">
+    <header class="site-header">
+      <div class="header-inner">
+        <a href="index.html" class="brand">
+          <div class="brand-logo">NR</div>
+          <div class="brand-text">
+            <div class="brand-name">Next Round</div>
+            <div class="brand-tagline">Partie App</div>
+          </div>
+        </a>
+        <nav class="header-nav">
+          <a href="#download" class="header-link">App</a>
+          <a href="https://linktr.ee/ntjourney" class="header-link" target="_blank" rel="noopener noreferrer">
+            Linktree
+          </a>
+          <a href="impressum.html" class="header-link">Impressum</a>
+          <a href="datenschutz.html" class="header-link">Datenschutz</a>
+          <a href="agb.html" class="header-link">AGB</a>
+          <a href="nutzungsbedingungen.html" class="header-link">Nutzungs&shy;bedingungen</a>
+          <a href="https://linktr.ee/ntjourney" target="_blank" rel="noopener noreferrer" class="header-cta">
+            <span>🔗</span>
+            <span>Alle Links</span>
+          </a>
+        </nav>
+      </div>
+    </header>
 
+    <main class="site-main">
+      <section class="section hero">
+        <div>
+          <div class="hero-eyebrow reveal">
+            <span>Next Round</span>
+            <span>•</span>
+            <span>Partie App</span>
+          </div>
+
+          <h1 class="hero-title reveal">
+            Die <span class="hero-highlight">nächste Runde</span><br />
+            startet von ganz allein.
+          </h1>
+
+          <p class="hero-subtitle reveal">
+            Next Round organisiert eure Party- und Spiele-Abende:
+            Reihenfolge, Runden, Punkte – alles in einer App.
+            Weniger Chaos, mehr Spaß.
+          </p>
+
+          <div id="download" class="hero-actions reveal">
+            <!-- TODO: Store-Links ersetzen, sobald live -->
+            <a href="#" class="button-primary">
+              <span>⬇</span>
+              <span>Zur App (bald verfügbar)</span>
+            </a>
+            <a href="https://linktr.ee/ntjourney" target="_blank" rel="noopener noreferrer" class="button-secondary">
+              <span>🔗</span>
+              <span>Alle Links (Linktree)</span>
+            </a>
+          </div>
+
+          <div class="hero-meta reveal">
+            <div class="meta-item">
+              <strong>Für eure Runden</strong><br />
+              Brettspiele, Karten, Trinkspiele u.v.m.
+            </div>
+            <div class="meta-item">
+              <strong>Multiplayer</strong><br />
+              Lobby-Code teilen, mitspielen, loslegen.
+            </div>
+            <div class="meta-item">
+              <strong>Ohne Zwangs-Account</strong><br />
+              Kein Login nötig, einfach starten.
+            </div>
+          </div>
+        </div>
+
+        <aside class="hero-card">
+          <div class="hero-card-inner">
+            <div class="hero-card-header">
+              <div class="hero-card-title">Live-Partie</div>
+              <div class="hero-card-chip">Next Round</div>
+            </div>
+            <div class="hero-card-main">
+              Nächster Zug: <span>Spieler 3</span><br />
+              Modus: <span>Zufall • Best of 5</span>
+            </div>
+            <div class="hero-card-meta">
+              Spieler, Reihenfolge und Runden laufen automatisch –
+              ihr müsst nur noch spielen.
+            </div>
+            <div class="hero-card-footer">
+              <div class="pill">Runde 4 / 10</div>
+              <div class="pill pill-accent">Nächste Runde starten</div>
+            </div>
+          </div>
+        </aside>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <div>© <span id="year"></span> Next Round. Alle Rechte vorbehalten.</div>
+        <div class="footer-links">
+          <a href="impressum.html">Impressum</a>
+          <a href="datenschutz.html">Datenschutz</a>
+          <a href="agb.html">AGB</a>
+          <a href="nutzungsbedingungen.html">Nutzungs&shy;bedingungen</a>
+          <a href="https://linktr.ee/ntjourney" target="_blank" rel="noopener noreferrer">Linktree</a>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>
