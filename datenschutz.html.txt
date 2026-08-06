@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <title>Datenschutzerklärung – Next Round</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex,follow" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="site">
+    <header class="site-header">
+      <div class="header-inner">
+        <a href="index.html" class="brand">
+          <div class="brand-logo">NR</div>
+          <div class="brand-text">
+            <div class="brand-name">Next Round</div>
+            <div class="brand-tagline">Partie App</div>
+          </div>
+        </a>
+        <nav class="header-nav">
+          <a href="index.html" class="header-link">Zurück zur Startseite</a>
+          <a href="https://linktr.ee/ntjourney" class="header-link" target="_blank" rel="noopener noreferrer">
+            Linktree
+          </a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="site-main">
+      <section class="section">
+        <header class="legal-page-header reveal">
+          <div class="legal-kicker">Datenschutz</div>
+          <h1 class="legal-title">Datenschutzerklärung</h1>
+          <p class="legal-intro">
+            Diese Datenschutzerklärung erläutert, wie die Next Round GbR personenbezogene Daten
+            bei der Nutzung der mobilen App „NextRound“ verarbeitet.
+          </p>
+          <p class="legal-intro">
+            Stand: Juli 2026
+          </p>
+        </header>
+
+        <article class="legal-content reveal">
+          <!-- HIER deinen Datenschutzerklärungs-Text EINSETZEN -->
+          <!-- Du kannst deinen Text direkt als HTML einfügen, z.B. mit <h2>, <p>, <ul> etc. -->
+
+          <!-- BEGINN DEINES TEXTES -->
+          <h2>1. Verantwortlicher</h2>
+          <p>
+            Verantwortlich ist die Next Round GbR, Schillingstraße 15, 07548 Gera, Deutschland,
+            E-Mail: <a href="mailto:nextround67@gmail.com">nextround67@gmail.com</a>.
+          </p>
+
+          <h2>2. Allgemeine Informationen zur App</h2>
+          <p>
+            NextRound ist eine App für Partyspiele und Multiplayer-Runden und kann ohne verpflichtende Registrierung genutzt werden.
+          </p>
+          <p>
+            Wir verarbeiten Daten nur, soweit dies für Betrieb, Multiplayer-, Premium- und Feedback-Funktionen, technische Sicherheit
+            oder gesetzliche Pflichten erforderlich ist. Wir verkaufen keine personenbezogenen Daten und verwenden derzeit keine
+            Werbe-SDKs, Analyseplattformen oder Push-Benachrichtigungen.
+          </p>
+
+          <h2>3. Verarbeitete Daten</h2>
+          <p>
+            Spiel- und Lobbydaten wie Spielername, Lobby-Code und temporäre Sitzungsdaten zur Durchführung der Runde
+            (Art. 6 Abs. 1 lit. b DSGVO).
+          </p>
+          <p>
+            Spielstatistiken während einer aktiven Runde (Art. 6 Abs. 1 lit. b DSGVO).
+          </p>
+          <p>
+            Technische Daten wie IP-Adresse, Geräteinformationen und Serverprotokolle für Betrieb und Sicherheit
+            (Art. 6 Abs. 1 lit. f DSGVO).
+          </p>
+          <p>
+            Premium- und Abonnementstatus zur Freischaltung und Verwaltung von Premium-Funktionen
+            (Art. 6 Abs. 1 lit. b DSGVO).
+          </p>
+          <p>
+            Freiwillig übermittelte Feedback-Inhalte zur Fehlerbehebung und Verbesserung
+            (Art. 6 Abs. 1 lit. f DSGVO).
+          </p>
+          <p>
+            Zahlungsdaten werden durch Stripe verarbeitet; Next Round GbR speichert keine vollständigen Zahlungsdaten.
+          </p>
+
+          <h2>4. Nutzung ohne Registrierung</h2>
+          <p>
+            Ein Konto mit E-Mail-Adresse oder Passwort ist nicht erforderlich. Ein eingegebener Spielername wird nur zur
+            Anzeige in einer Spielrunde oder Lobby verarbeitet und sollte keine sensiblen Angaben enthalten.
+          </p>
+
+          <h2>5. Multiplayer- und Lobbydaten</h2>
+          <p>
+            Spielernamen, Lobby-Codes und temporäre Sitzungsdaten werden zur Erstellung, Teilnahme und Synchronisierung von
+            Runden verarbeitet. Lobbydaten werden nach Ende der Lobby gelöscht; Spielstatistiken werden nur während der
+            aktiven Runde verarbeitet.
+          </p>
+
+          <h2>6. Premium-Funktionen und Stripe</h2>
+          <p>
+            Premium-Käufe und Abonnements werden über Stripe abgewickelt. Kreditkarten- und andere vollständige Zahlungsdaten
+            werden ausschließlich durch Stripe verarbeitet.
+          </p>
+          <p>
+            Weitere Informationen: <a href="https://stripe.com/privacy" target="_blank" rel="noopener noreferrer">
+            https://stripe.com/privacy</a>. Je nach Region kann eine Verarbeitung durch Stripe, Inc. oder eine andere
+            zuständige Stripe-Gesellschaft erfolgen.
+          </p>
+
+          <h2>7. Hosting und Backend über Base44</h2>
+          <p>
+            Base44, Inc. wird als Hosting- und Backend-Anbieter eingesetzt. Dort werden insbesondere Premiumstatus,
+            Feedback, temporäre Lobbydaten und technische Protokolldaten verarbeitet.
+          </p>
+          <p>
+            Weitere Informationen: <a href="https://base44.com/privacy" target="_blank" rel="noopener noreferrer">
+            https://base44.com/privacy</a>. Soweit Base44 in unserem Auftrag verarbeitet, erfolgt dies auf Grundlage eines
+            Auftragsverarbeitungsvertrags.
+          </p>
+
+          <h2>8. Feedback-Funktion</h2>
+          <p>
+            Freiwillig eingegebene Inhalte werden zur Fehlerbehebung, Verbesserung und Bewertung von Vorschlägen verwendet.
+            Feedback wird bis zur Bearbeitung, spätestens jedoch nach zwölf Monaten, gelöscht.
+          </p>
+
+          <h2>9. Keine besonderen App-Berechtigungen</h2>
+          <p>
+            Die App greift nicht auf Standort, Kamera, Mikrofon, Kontakte oder Fotos zu und verwendet derzeit keine
+            Push-Benachrichtigungen.
+          </p>
+
+          <h2>10. Keine Werbung und kein Analyse-Tracking</h2>
+          <p>
+            Wir verwenden derzeit keine Werbe-SDKs oder Analyseplattformen und geben Daten nicht zu Werbezwecken weiter.
+            Bei zukünftigen Änderungen wird diese Erklärung aktualisiert und erforderlichenfalls vorher eine Einwilligung
+            eingeholt.
+          </p>
+
+          <h2>11. Empfänger</h2>
+          <p>Empfänger sind insbesondere:</p>
+          <ul>
+            <li>Base44, Inc. als Hosting- und Backend-Anbieter</li>
+            <li>Stripe als Zahlungsdienstleister</li>
+            <li>Behörden oder andere Stellen, soweit wir gesetzlich dazu verpflichtet sind</li>
+          </ul>
+
+          <h2>12. Internationale Datenübermittlungen</h2>
+          <p>
+            Bei Dienstleistern kann eine Verarbeitung außerhalb der EU oder des EWR erfolgen. Übermittlungen erfolgen nur
+            auf Grundlage geeigneter Garantien, etwa eines Angemessenheitsbeschlusses oder von Standardvertragsklauseln.
+          </p>
+
+          <h2>13. Inhalte ab 18 Jahren</h2>
+          <p>
+            Einzelne optionale Kategorien können Inhalte für Erwachsene enthalten und müssen bewusst aktiviert werden.
+          </p>
+
+          <h2>14. Speicherdauer</h2>
+          <p>
+            Wir speichern Daten nur so lange, wie es für den jeweiligen Zweck oder gesetzliche Pflichten erforderlich ist.
+            Lobbydaten werden nach Lobbyende gelöscht, Rundenstatistiken nach der Runde, Feedback spätestens nach zwölf
+            Monaten und Premiumstatus entsprechend Vertrags- und Aufbewahrungspflichten.
+          </p>
+
+          <h2>15. Sicherheit</h2>
+          <p>
+            Wir treffen angemessene technische und organisatorische Maßnahmen zum Schutz vor Verlust, Missbrauch,
+            unbefugtem Zugriff, Veränderung oder Offenlegung.
+          </p>
+
+          <h2>16. Rechte der betroffenen Personen</h2>
+          <p>
+            Betroffene haben insbesondere das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung,
+            Datenübertragbarkeit, Widerspruch sowie Widerruf einer Einwilligung mit Wirkung für die Zukunft.
+          </p>
+          <p>
+            Zur Ausübung dieser Rechte: <a href="mailto:nextround67@gmail.com">nextround67@gmail.com</a>.
+          </p>
+
+          <h2>17. Beschwerderecht</h2>
+          <p>
+            Betroffene können sich bei einer Datenschutzaufsichtsbehörde beschweren. Zuständig ist insbesondere der
+            Thüringer Landesbeauftragte für den Datenschutz und die Informationsfreiheit, Häßlerstraße 8, 99096 Erfurt,
+            E-Mail: <a href="mailto:poststelle@datenschutz.thueringen.de">poststelle@datenschutz.thueringen.de</a>.
+          </p>
+
+          <h2>18. Änderungen</h2>
+          <p>
+            Wir können diese Datenschutzerklärung bei Änderungen der App, der Verarbeitung oder rechtlicher Anforderungen
+            aktualisieren. Die aktuelle Fassung wird in der App oder über einen bereitgestellten Link veröffentlicht.
+          </p>
+
+          <p>Stand: Juli 2026</p>
+          <!-- ENDE DEINES TEXTES -->
+        </article>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <div>© <span id="year"></span> Next Round. Alle Rechte vorbehalten.</div>
+        <div class="footer-links">
+          <a href="impressum.html">Impressum</a>
+          <a href="datenschutz.html">Datenschutz</a>
+          <a href="agb.html">AGB</a>
+          <a href="nutzungsbedingungen.html">Nutzungs&shy;bedingungen</a>
+          <a href="https://linktr.ee/ntjourney" target="_blank" rel="noopener noreferrer">Linktree</a>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>
