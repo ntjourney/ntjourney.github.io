@@ -9,7 +9,7 @@ if(host){
   `;
   document.head.appendChild(style);
   const logo=document.createElement('img');
-  logo.src='IMG_1751.png';
+  logo.src='C109D335-EFBE-4BED-9522-CA814AA267DD.png';
   logo.alt='Next Round Logo';
   logo.decoding='async';
   host.replaceChildren(logo);
