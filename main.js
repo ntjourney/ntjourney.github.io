@@ -1,33 +1,30 @@
-// main.js
-
 document.addEventListener('DOMContentLoaded', () => {
-  // Jahr im Footer setzen
-  const yearSpan = document.getElementById('year');
-  if (yearSpan) {
-    yearSpan.textContent = new Date().getFullYear();
-  }
+  document.querySelectorAll('#year').forEach((el) => {
+    el.textContent = new Date().getFullYear();
+  });
 
-  // Reveal-on-scroll Animation
-  const reveals = document.querySelectorAll('.reveal');
-
-  if ('IntersectionObserver' in window) {
-    const observer = new IntersectionObserver(
-      entries => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('reveal-visible');
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      {
-        threshold: 0.15
+  const replaceText = (node) => {
+    node.childNodes.forEach((child) => {
+      if (child.nodeType === Node.TEXT_NODE) {
+        child.nodeValue = child.nodeValue.replace(/Schillingstraße/g, 'Schellingstraße');
+      } else if (child.nodeType === Node.ELEMENT_NODE && child.tagName !== 'SCRIPT' && child.tagName !== 'STYLE') {
+        replaceText(child);
       }
-    );
+    });
+  };
+  replaceText(document.body);
 
-    reveals.forEach(el => observer.observe(el));
-  } else {
-    // Fallback: alles sichtbar
-    reveals.forEach(el => el.classList.add('reveal-visible'));
-  }
+  document.querySelectorAll('a[href*="linktr.ee"]').forEach((link) => link.remove());
+
+  document.querySelectorAll('.brand-logo').forEach((logo) => {
+    logo.textContent = '';
+    const image = document.createElement('img');
+    image.src = 'bdfc461b-6b9a-47f0-959f-d017115b48a2.jpeg';
+    image.alt = 'Next Round Logo';
+    logo.appendChild(image);
+  });
+
+  document.querySelectorAll('.header-link[href="index.html"]').forEach((link) => {
+    link.textContent = '← Zur Startseite';
+  });
 });
