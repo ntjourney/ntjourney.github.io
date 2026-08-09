@@ -44,3 +44,77 @@
   </div>
   <div class="store-modal" id="store-modal" hidden role="dialog" aria-modal="true" aria-labelledby="modal-title"><div class="store-modal__backdrop" data-close-modal></div><section class="store-modal__card"><button class="store-modal__close" type="button" aria-label="Schließen" data-close-modal>×</button><img class="store-modal__logo" src="C109D335-EFBE-4BED-9522-CA814AA267DD.png" alt="NextRound Logo"><p class="store-modal__kicker">COMING SOON</p><h2 id="modal-title">Die App ist bald verfügbar.</h2><p class="store-modal__text">Wir arbeiten mit Hochdruck daran.<br>Sei gespannt!</p><div class="store-modal__status"><span></span>BALD VERFÜGBAR</div></section></div>
   <div class="early-modal" id="early-modal" hidden role="dialog" aria-modal="true" aria-labelledby="early-modal-title"><div class="early-modal__backdrop" data-close-early></div><section class="early-modal__card"><button class="early-modal__close" type="button" aria-label="Schließen" data-close-early>×</button><img class="early-modal__logo" src="C109D335-EFBE-4BED-9522-CA814AA267DD.png" alt="NextRound Logo"><p class="early-modal__kicker">EARLY ACCESS</p><h2 id="early-modal-title">Dein nächster Abend beginnt hier.</h2><p class="early-modal__text">Sichere dir Early Access und erfahre als Erste:r, sobald NextRound und der Onlinezugang verfügbar sind.</p><form class="early-modal__form" id="early-form"><input class="early-modal__input" id="early-email" type="email" placeholder="deine@email.de" autocomplete="email" required><button class="early-modal__button" type="submit"><span></span>Early Access sichern</button></form><p class="early-modal__success" aria-live="polite">Danke! Die E-Mail-Anbindung folgt in Kürze.</p><p class="early-modal__privacy">Mit deiner Anmeldung stimmst du zu, dass wir dich per E-Mail über den Release und den Webzugang informieren. Mehr dazu in unserer <a href="datenschutz.html"
+<p class="early-modal__privacy">
+  Mit deiner Anmeldung stimmst du zu, dass wir dich per E-Mail über den
+  Release und den Webzugang informieren. Mehr dazu in unserer
+  <a href="datenschutz.html">Datenschutzerklärung</a>.
+</p>
+</section>
+</div>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+
+  const storeModal = document.getElementById("store-modal");
+
+  const openStoreModal = () => {
+    storeModal.hidden = false;
+    document.body.style.overflow = "hidden";
+  };
+
+  const closeStoreModal = () => {
+    storeModal.hidden = true;
+    document.body.style.overflow = "";
+  };
+
+  document.querySelectorAll("[data-store-modal]").forEach((button) => {
+    button.addEventListener("click", openStoreModal);
+  });
+
+  document.querySelectorAll("[data-close-modal]").forEach((button) => {
+    button.addEventListener("click", closeStoreModal);
+  });
+
+  const earlyModal = document.getElementById("early-modal");
+  const earlyForm = document.getElementById("early-form");
+  const earlyEmail = document.getElementById("early-email");
+
+  const openEarlyModal = () => {
+    earlyModal.hidden = false;
+    document.body.style.overflow = "hidden";
+
+    setTimeout(() => {
+      earlyEmail.focus();
+    }, 120);
+  };
+
+  const closeEarlyModal = () => {
+    earlyModal.hidden = true;
+    document.body.style.overflow = "";
+    sessionStorage.setItem("nextRoundEarlyModalClosed", "1");
+  };
+
+  document.querySelectorAll("[data-close-early]").forEach((button) => {
+    button.addEventListener("click", closeEarlyModal);
+  });
+
+  earlyForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+    earlyModal.classList.add("is-success");
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key !== "Escape") return;
+
+    if (!storeModal.hidden) closeStoreModal();
+    if (!earlyModal.hidden) closeEarlyModal();
+  });
+
+  if (!sessionStorage.getItem("nextRoundEarlyModalClosed")) {
+    setTimeout(openEarlyModal, 10000);
+  }
+</script>
+
+<script type="module" src="hero-3d.js"></script>
+</body>
+</html>
