@@ -1,125 +1,352 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="de">
 <head>
   <meta charset="utf-8" />
-  <title>Next Round – Partie App</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Next Round – Die smarte Partie-App für eure Runden. Organisiert Spieler, Punkte und Runden automatisch." />
-  <link rel="stylesheet" href="styles.css" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1"
+  />
+
+  <meta
+    name="description"
+    content="Next Round – die Party-App für deine nächste Runde."
+  />
+
+  <meta name="theme-color" content="#49e0eb" />
+
+  <title>Next Round – Die Party geht weiter</title>
+
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap");
+
+    :root {
+      --cyan: #49e0eb;
+      --cyan-dark: #2ecbd8;
+      --black: #050505;
+      --white: #ffffff;
+      --gray: #737373;
+      --line: rgba(0, 0, 0, 0.22);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      min-height: 100%;
+      margin: 0;
+    }
+
+    body {
+      overflow-x: hidden;
+      color: var(--black);
+      background: var(--cyan);
+      font-family: "Space Grotesk", Arial, sans-serif;
+    }
+
+    .page {
+      position: relative;
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+      min-height: 100svh;
+      overflow: hidden;
+    }
+
+    .page::before {
+      position: absolute;
+      top: -240px;
+      right: -180px;
+      width: 560px;
+      height: 560px;
+      border: 1px solid rgba(0, 0, 0, 0.15);
+      border-radius: 50%;
+      content: "";
+      pointer-events: none;
+    }
+
+    .page::after {
+      position: absolute;
+      bottom: -290px;
+      left: -190px;
+      width: 620px;
+      height: 620px;
+      border: 1px solid rgba(0, 0, 0, 0.15);
+      border-radius: 50%;
+      content: "";
+      pointer-events: none;
+    }
+
+    header {
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 28px clamp(22px, 5vw, 72px);
+    }
+
+    .brand {
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: -0.04em;
+      text-transform: uppercase;
+    }
+
+    .coming-soon {
+      display: flex;
+      gap: 9px;
+      align-items: center;
+      padding: 8px 12px;
+      color: var(--white);
+      background: var(--black);
+      border-radius: 99px;
+      font-family: "DM Mono", monospace;
+      font-size: 10px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .status-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--cyan);
+      box-shadow: 0 0 10px var(--cyan);
+    }
+
+    main {
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 20px 22px 58px;
+      text-align: center;
+    }
+
+    .logo-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: clamp(150px, 23vw, 260px);
+      aspect-ratio: 1;
+      margin-bottom: clamp(20px, 3.5vw, 35px);
+      overflow: hidden;
+      border-radius: 28px;
+      background: var(--cyan);
+      box-shadow: 15px 15px 0 var(--black);
+    }
+
+    .logo-wrap img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    h1 {
+      max-width: 1000px;
+      margin: 0;
+      font-size: clamp(52px, 11vw, 155px);
+      font-weight: 700;
+      letter-spacing: -0.105em;
+      line-height: 0.78;
+      text-transform: uppercase;
+    }
+
+    .headline-accent {
+      color: var(--white);
+      -webkit-text-stroke: 2px var(--black);
+      text-shadow: 5px 5px 0 var(--black);
+    }
+
+    .claim {
+      max-width: 450px;
+      margin: 34px auto 28px;
+      font-size: clamp(16px, 2vw, 20px);
+      font-weight: 500;
+      line-height: 1.4;
+    }
+
+    .stores {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .store-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-width: 170px;
+      padding: 14px 18px;
+      color: var(--white);
+      background: var(--black);
+      border: 2px solid var(--black);
+      border-radius: 12px;
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .store-button:hover {
+      box-shadow: 5px 5px 0 var(--white);
+      transform: translate(-3px, -3px);
+    }
+
+    .store-button svg {
+      width: 20px;
+      height: 20px;
+      fill: currentColor;
+    }
+
+    footer {
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      margin: 0 clamp(22px, 5vw, 72px);
+      padding: 21px 0 26px;
+      border-top: 1px solid var(--line);
+      font-family: "DM Mono", monospace;
+      font-size: 11px;
+    }
+
+    footer nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 16px;
+    }
+
+    footer a {
+      color: var(--black);
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+      text-underline-offset: 4px;
+    }
+
+    @media (max-width: 600px) {
+      header {
+        padding-top: 20px;
+      }
+
+      .coming-soon {
+        font-size: 9px;
+      }
+
+      .logo-wrap {
+        border-radius: 22px;
+        box-shadow: 10px 10px 0 var(--black);
+      }
+
+      .headline-accent {
+        -webkit-text-stroke-width: 1px;
+        text-shadow: 3px 3px 0 var(--black);
+      }
+
+      footer {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      footer nav {
+        justify-content: flex-start;
+        gap: 12px;
+      }
+    }
+  </style>
 </head>
+
 <body>
-  <div class="site">
-    <header class="site-header">
-      <div class="header-inner">
-        <a href="index.html" class="brand">
-          <div class="brand-logo">NR</div>
-          <div class="brand-text">
-            <div class="brand-name">Next Round</div>
-            <div class="brand-tagline">Partie App</div>
-          </div>
-        </a>
-        <nav class="header-nav">
-          <a href="#download" class="header-link">App</a>
-          <a href="https://linktr.ee/ntjourney" class="header-link" target="_blank" rel="noopener noreferrer">
-            Linktree
-          </a>
-          <a href="impressum.html" class="header-link">Impressum</a>
-          <a href="datenschutz.html" class="header-link">Datenschutz</a>
-          <a href="agb.html" class="header-link">AGB</a>
-          <a href="nutzungsbedingungen.html" class="header-link">Nutzungs&shy;bedingungen</a>
-          <a href="https://linktr.ee/ntjourney" target="_blank" rel="noopener noreferrer" class="header-cta">
-            <span>🔗</span>
-            <span>Alle Links</span>
-          </a>
-        </nav>
+  <div class="page">
+    <header>
+      <div class="brand">Next Round</div>
+
+      <div class="coming-soon">
+        <span class="status-dot"></span>
+        Coming soon
       </div>
     </header>
 
-    <main class="site-main">
-      <section class="section hero">
-        <div>
-          <div class="hero-eyebrow reveal">
-            <span>Next Round</span>
-            <span>•</span>
-            <span>Partie App</span>
-          </div>
+    <main>
+      <!--
+        Das echte Next-Round-Logo.
+        Die JPEG-Datei muss im gleichen Ordner wie die index.html liegen.
+      -->
+      <div class="logo-wrap">
+        <img
+          src="bdfc461b-6b9a-47f0-959f-d017115b48a2.jpeg"
+          alt="Next Round Logo"
+        />
+      </div>
 
-          <h1 class="hero-title reveal">
-            Die <span class="hero-highlight">nächste Runde</span><br />
-            startet von ganz allein.
-          </h1>
+      <h1>
+        Deine Nacht.<br />
+        <span class="headline-accent">Next Round.</span>
+      </h1>
 
-          <p class="hero-subtitle reveal">
-            Next Round organisiert eure Party- und Spiele-Abende:
-            Reihenfolge, Runden, Punkte – alles in einer App.
-            Weniger Chaos, mehr Spaß.
-          </p>
+      <p class="claim">
+        Die Party-App für den Moment, in dem keiner nach Hause will.
+      </p>
 
-          <div id="download" class="hero-actions reveal">
-            <!-- TODO: Store-Links ersetzen, sobald live -->
-            <a href="#" class="button-primary">
-              <span>⬇</span>
-              <span>Zur App (bald verfügbar)</span>
-            </a>
-            <a href="https://linktr.ee/ntjourney" target="_blank" rel="noopener noreferrer" class="button-secondary">
-              <span>🔗</span>
-              <span>Alle Links (Linktree)</span>
-            </a>
-          </div>
+      <div class="stores">
+        <!-- Später durch euren echten Apple-App-Store-Link ersetzen -->
+        <a
+          class="store-button"
+          href="https://apps.apple.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Next Round im App Store"
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path
+              d="M17.05 20.28c-1.05 1.02-2.2.86-3.31.37-1.18-.5-2.26-.52-3.5 0-1.55.67-2.37.48-3.3-.37C1.7 14.88 2.47 6.66 8.33 6.36c1.43.07 2.43.78 3.27.83 1.25-.25 2.45-.97 3.78-.88 1.6.13 2.8.76 3.6 1.88-3.3 1.98-2.52 6.34.51 7.56-.6 1.57-1.38 3.13-2.44 4.57ZM11.5 6.34C11.34 4.01 13.24 2.08 15.41 2c.3 2.69-2.44 4.6-3.91 4.34Z"
+            />
+          </svg>
+          App Store
+        </a>
 
-          <div class="hero-meta reveal">
-            <div class="meta-item">
-              <strong>Für eure Runden</strong><br />
-              Brettspiele, Karten, Trinkspiele u.v.m.
-            </div>
-            <div class="meta-item">
-              <strong>Multiplayer</strong><br />
-              Lobby-Code teilen, mitspielen, loslegen.
-            </div>
-            <div class="meta-item">
-              <strong>Ohne Zwangs-Account</strong><br />
-              Kein Login nötig, einfach starten.
-            </div>
-          </div>
-        </div>
-
-        <aside class="hero-card">
-          <div class="hero-card-inner">
-            <div class="hero-card-header">
-              <div class="hero-card-title">Live-Partie</div>
-              <div class="hero-card-chip">Next Round</div>
-            </div>
-            <div class="hero-card-main">
-              Nächster Zug: <span>Spieler 3</span><br />
-              Modus: <span>Zufall • Best of 5</span>
-            </div>
-            <div class="hero-card-meta">
-              Spieler, Reihenfolge und Runden laufen automatisch –
-              ihr müsst nur noch spielen.
-            </div>
-            <div class="hero-card-footer">
-              <div class="pill">Runde 4 / 10</div>
-              <div class="pill pill-accent">Nächste Runde starten</div>
-            </div>
-          </div>
-        </aside>
-      </section>
+        <!-- Später durch euren echten Google-Play-Link ersetzen -->
+        <a
+          class="store-button"
+          href="https://play.google.com/store"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Next Round bei Google Play"
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path
+              d="m3.18 2.12 10.9 10.06L3.21 21.9A2.16 2.16 0 0 1 2 20V4c0-.78.45-1.5 1.18-1.88Zm12.36 11.21 2.64 2.44-11.76 6.49 8.06-8.93 1.06.99Zm3.96-3.55 1.33.73a1.92 1.92 0 0 1 0 3l-1.3.72-3.08-2.85 3.05-1.6Zm-5.08 1.28-8.06-9 11.8 6.5-3.74 2.07Z"
+            />
+          </svg>
+          Google Play
+        </a>
+      </div>
     </main>
 
-    <footer class="site-footer">
-      <div class="footer-inner">
-        <div>© <span id="year"></span> Next Round. Alle Rechte vorbehalten.</div>
-        <div class="footer-links">
-          <a href="impressum.html">Impressum</a>
-          <a href="datenschutz.html">Datenschutz</a>
-          <a href="agb.html">AGB</a>
-          <a href="nutzungsbedingungen.html">Nutzungs&shy;bedingungen</a>
-          <a href="https://linktr.ee/ntjourney" target="_blank" rel="noopener noreferrer">Linktree</a>
-        </div>
-      </div>
+    <footer>
+      <span>© <span id="year"></span> Next Round</span>
+
+      <nav aria-label="Rechtliches">
+        <a href="impressum.html">Impressum</a>
+        <a href="datenschutz.html">Datenschutzerklärung</a>
+        <a href="nutzungsbedingungen.html">Nutzungsbedingungen</a>
+        <a href="agb.html">AGB</a>
+      </nav>
     </footer>
   </div>
 
-  <script src="main.js"></script>
+  <script>
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+  </script>
 </body>
 </html>
