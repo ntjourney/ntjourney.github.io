@@ -47,5 +47,184 @@
   </div>
   <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
   <script type="module" src="hero-3d.js"></script>
+  <div class="store-modal" id="store-modal" hidden role="dialog" aria-modal="true" aria-labelledby="modal-title">
+  <div class="store-modal__backdrop" data-close-modal></div>
+
+  <section class="store-modal__card">
+    <button class="store-modal__close" type="button" aria-label="Schließen" data-close-modal>×</button>
+
+    <img
+      class="store-modal__logo"
+      src="C109D335-EFBE-4BED-9522-CA814AA267DD.png"
+      alt="NextRound Logo"
+    >
+
+    <p class="store-modal__kicker">COMING SOON</p>
+
+    <h2 id="modal-title">Die App ist bald verfügbar.</h2>
+
+    <p class="store-modal__text">
+      Wir arbeiten mit Hochdruck daran.<br>
+      Sei gespannt!
+    </p>
+
+    <div class="store-modal__status">
+      <span></span>
+      BALD VERFÜGBAR
+    </div>
+  </section>
+</div>
+
+<style>
+  .store-modal[hidden] {
+    display: none;
+  }
+
+  .store-modal {
+    position: fixed;
+    z-index: 1000;
+    inset: 0;
+  }
+
+  .store-modal__backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(5, 5, 5, .42);
+    backdrop-filter: blur(10px);
+  }
+
+  .store-modal__card {
+    position: relative;
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    width: min(91vw, 480px);
+    padding: 46px 34px 36px;
+    border: 1px solid rgba(0, 0, 0, .06);
+    border-radius: 30px;
+    background: rgba(255, 255, 255, .97);
+    box-shadow: 0 28px 80px rgba(0, 0, 0, .25);
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+
+  .store-modal__close {
+    position: absolute;
+    top: 17px;
+    right: 17px;
+    display: grid;
+    place-items: center;
+    width: 34px;
+    height: 34px;
+    border: 0;
+    border-radius: 50%;
+    background: #f1f1f1;
+    color: #050505;
+    font-size: 24px;
+    line-height: 1;
+    cursor: pointer;
+    transition: transform .18s ease, background .18s ease;
+  }
+
+  .store-modal__close:hover {
+    background: #e7e7e7;
+    transform: scale(1.06);
+  }
+
+  .store-modal__logo {
+    display: block;
+    width: 120px;
+    height: 120px;
+    margin: 0 auto 24px;
+    object-fit: contain;
+    filter: drop-shadow(0 14px 12px rgba(0, 0, 0, .22));
+  }
+
+  .store-modal__kicker {
+    margin: 0 0 10px;
+    color: #35bccc;
+    font: 500 11px 'DM Mono', monospace;
+    letter-spacing: .14em;
+  }
+
+  .store-modal h2 {
+    margin: 0;
+    color: #050505;
+    font-size: clamp(28px, 6vw, 38px);
+    font-weight: 700;
+    letter-spacing: -.055em;
+    line-height: 1.04;
+  }
+
+  .store-modal__text {
+    margin: 16px 0 25px;
+    color: #555;
+    font-size: 16px;
+    line-height: 1.55;
+  }
+
+  .store-modal__status {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    padding: 10px 15px;
+    border-radius: 999px;
+    background: #050505;
+    box-shadow: 0 8px 18px rgba(0, 0, 0, .14);
+    color: #fff;
+    font: 500 11px 'DM Mono', monospace;
+    letter-spacing: .06em;
+  }
+
+  .store-modal__status span {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #66dce8;
+    box-shadow: 0 0 12px rgba(102, 220, 232, .9);
+  }
+
+  @media (max-width: 600px) {
+    .store-modal__card {
+      padding: 42px 24px 30px;
+      border-radius: 26px;
+    }
+
+    .store-modal__logo {
+      width: 105px;
+      height: 105px;
+      margin-bottom: 20px;
+    }
+  }
+</style>
+
+<script>
+  const storeModal = document.getElementById('store-modal');
+
+  const openStoreModal = () => {
+    storeModal.hidden = false;
+    document.body.style.overflow = 'hidden';
+  };
+
+  const closeStoreModal = () => {
+    storeModal.hidden = true;
+    document.body.style.overflow = '';
+  };
+
+  document.querySelectorAll('[data-store-modal]').forEach((button) => {
+    button.addEventListener('click', openStoreModal);
+  });
+
+  document.querySelectorAll('[data-close-modal]').forEach((button) => {
+    button.addEventListener('click', closeStoreModal);
+  });
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && !storeModal.hidden) {
+      closeStoreModal();
+    }
+  });
+</script>
+
 </body>
 </html>
