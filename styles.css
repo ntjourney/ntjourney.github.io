@@ -93,16 +93,13 @@ a {
   width: 44px;
   height: 44px;
   overflow: hidden;
-  border: 1px solid rgba(5, 5, 5, .10);
+  border: 0;
   border-radius: 13px;
-  background:
-    linear-gradient(145deg, rgba(255, 255, 255, .85), rgba(235, 247, 248, .7)),
-    url("C109D335-EFBE-4BED-9522-CA814AA267DD.png") center / contain no-repeat;
-  box-shadow:
-    0 8px 18px rgba(8, 25, 29, .12),
-    inset 0 1px 0 rgba(255, 255, 255, .9);
+  background: url("C109D335-EFBE-4BED-9522-CA814AA267DD.png") center / contain no-repeat;
+  box-shadow: 0 8px 18px rgba(8, 25, 29, .16);
   font-size: 0;
 }
+
 
 .brand-logo img {
   display: none;
