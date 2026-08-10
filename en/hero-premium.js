@@ -16,6 +16,11 @@
       @keyframes nrSheen { 0%,12% { opacity:0; background-position:160% 0 } 16% { opacity:.92 } 30%,100% { opacity:0; background-position:-60% 0 } }
       @keyframes nrProductTurn { 0%,14% { transform: translate3d(0,0,0) rotateX(0) rotateY(0) rotateZ(0); filter: drop-shadow(0 20px 20px rgba(0,0,0,.20)); } 25% { transform: translate3d(0,-5px,32px) rotateX(-1deg) rotateY(-8deg) rotateZ(0); } 48% { transform: translate3d(0,-10px,42px) rotateX(-1deg) rotateY(-178deg) rotateZ(0); filter: drop-shadow(0 28px 26px rgba(0,0,0,.24)); } 72% { transform: translate3d(0,-4px,30px) rotateX(1deg) rotateY(-360deg) rotateZ(0); } 84% { transform: translate3d(0,1px,0) rotateX(0) rotateY(-360deg) rotateZ(.35deg); } 91%,100% { transform: translate3d(0,0,0) rotateX(0) rotateY(-360deg) rotateZ(0); filter: drop-shadow(0 20px 20px rgba(0,0,0,.20)); } }
       @media (prefers-reduced-motion: reduce) { #logo3d .nr-hero-logo, #logo3d .nr-sheen { animation: none; } }
+      .site-footer { position: relative; }
+      .site-footer .language-switch { position: absolute; top: 0; right: 0; display: inline-flex; align-items: center; gap: 5px; margin: 0; padding: 0; border: 0; border-radius: 0; background: transparent; font: 500 11px 'DM Mono', monospace; letter-spacing: .04em; }
+      .site-footer .language-switch a, .site-footer .language-switch span { display: inline; min-width: 0; width: auto; height: auto; padding: 0; border-radius: 0; background: transparent; box-shadow: none; color: rgba(5,5,5,.5); text-decoration: none; }
+      .site-footer .language-switch a::after { content: ' /'; }
+      .site-footer .language-switch .active { background: transparent; box-shadow: none; color: #050505; font-weight: 700; }
     `;
     document.head.appendChild(style);
     const stage = document.createElement('div');
