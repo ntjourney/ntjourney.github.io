@@ -20,7 +20,7 @@
   <meta property="og:type" content="website">
   <meta
     property="og:image"
-    content="https://ntjourney.github.io/C109D335-EFBE-4BED-9522-CA814AA267DD.png"
+    content="https://ntjourney.github.io/en/C109D335-EFBE-4BED-9522-CA814AA267DD.png"
   >
   <meta property="og:image:alt" content="NextRound Logo">
 
@@ -35,321 +35,360 @@
   >
   <meta
     name="twitter:image"
-    content="https://ntjourney.github.io/C109D335-EFBE-4BED-9522-CA814AA267DD.png"
+    content="https://ntjourney.github.io/en/C109D335-EFBE-4BED-9522-CA814AA267DD.png"
   >
 
-  <!-- CSS from main directory -->
-  <link rel="stylesheet" href="../home.css">
+  <link rel="stylesheet" href="home.css">
 
   <style>
-    .claim{
-      line-height:1.1
+    .claim {
+      line-height: 1.1;
     }
 
     .claim-main,
-    .claim-sub{
-      display:block
+    .claim-sub {
+      display: block;
     }
 
-    .claim-main{
-      font-size:clamp(1.55rem,3.2vw,2.55rem);
-      font-weight:700;
-      letter-spacing:-.045em
+    .claim-main {
+      font-size: clamp(1.55rem, 3.2vw, 2.55rem);
+      font-weight: 700;
+      letter-spacing: -.045em;
     }
 
-    .claim-sub{
-      margin-top:.55rem;
-      font-size:clamp(.95rem,1.45vw,1.15rem);
-      font-weight:500;
-      letter-spacing:-.015em;
-      opacity:.68
+    .claim-sub {
+      margin-top: .55rem;
+      font-size: clamp(.95rem, 1.45vw, 1.15rem);
+      font-weight: 500;
+      letter-spacing: -.015em;
+      opacity: .68;
     }
 
     .store-modal[hidden],
-    .early-modal[hidden]{
-      display:none
+    .early-modal[hidden] {
+      display: none;
     }
 
     .store-modal,
-    .early-modal{
-      position:fixed;
-      z-index:1000;
-      inset:0
+    .early-modal {
+      position: fixed;
+      z-index: 1000;
+      inset: 0;
     }
 
-    .early-modal{
-      z-index:1100
+    .early-modal {
+      z-index: 1100;
     }
 
     .store-modal__backdrop,
-    .early-modal__backdrop{
-      position:absolute;
-      inset:0;
-      background:rgba(5,5,5,.42);
-      backdrop-filter:blur(10px)
+    .early-modal__backdrop {
+      position: absolute;
+      inset: 0;
+      background: rgba(5, 5, 5, .42);
+      backdrop-filter: blur(10px);
     }
 
-    .store-modal__card{
-      position:relative;
-      z-index:1;
-      top:50%;
-      left:50%;
-      width:min(91vw,480px);
-      padding:46px 34px 36px;
-      border:1px solid rgba(0,0,0,.06);
-      border-radius:30px;
-      background:rgba(255,255,255,.97);
-      box-shadow:0 28px 80px rgba(0,0,0,.25);
-      transform:translate(-50%,-50%);
-      text-align:center
+    .store-modal__card {
+      position: relative;
+      z-index: 1;
+      top: 50%;
+      left: 50%;
+      width: min(91vw, 480px);
+      padding: 46px 34px 36px;
+      border: 1px solid rgba(0, 0, 0, .06);
+      border-radius: 30px;
+      background: rgba(255, 255, 255, .97);
+      box-shadow: 0 28px 80px rgba(0, 0, 0, .25);
+      transform: translate(-50%, -50%);
+      text-align: center;
     }
 
     .store-modal__close,
-    .early-modal__close{
-      position:absolute;
-      top:17px;
-      right:17px;
-      display:grid;
-      place-items:center;
-      width:34px;
-      height:34px;
-      border:0;
-      border-radius:50%;
-      background:#f1f1f1;
-      color:#050505;
-      font-size:24px;
-      line-height:1;
-      cursor:pointer;
-      transition:transform .18s,background .18s
+    .early-modal__close {
+      position: absolute;
+      top: 17px;
+      right: 17px;
+      display: grid;
+      place-items: center;
+      width: 34px;
+      height: 34px;
+      border: 0;
+      border-radius: 50%;
+      background: #f1f1f1;
+      color: #050505;
+      font-size: 24px;
+      line-height: 1;
+      cursor: pointer;
+      transition: transform .18s, background .18s;
     }
 
     .store-modal__close:hover,
-    .early-modal__close:hover{
-      background:#e7e7e7;
-      transform:scale(1.06)
+    .early-modal__close:hover {
+      background: #e7e7e7;
+      transform: scale(1.06);
     }
 
-    .store-modal__logo{
-      display:block;
-      width:120px;
-      height:120px;
-      margin:0 auto 24px;
-      object-fit:contain;
-      filter:drop-shadow(0 14px 12px rgba(0,0,0,.22))
+    .store-modal__logo {
+      display: block;
+      width: 120px;
+      height: 120px;
+      margin: 0 auto 24px;
+      object-fit: contain;
+      filter: drop-shadow(0 14px 12px rgba(0, 0, 0, .22));
     }
 
     .store-modal__kicker,
-    .early-modal__kicker{
-      margin:0 0 10px;
-      color:#35bccc;
-      font:500 11px 'DM Mono',monospace;
-      letter-spacing:.14em
+    .early-modal__kicker {
+      margin: 0 0 10px;
+      color: #35bccc;
+      font: 500 11px 'DM Mono', monospace;
+      letter-spacing: .14em;
     }
 
-    .store-modal h2{
-      margin:0;
-      color:#050505;
-      font-size:clamp(28px,6vw,38px);
-      font-weight:700;
-      letter-spacing:-.055em;
-      line-height:1.04
+    .store-modal h2 {
+      margin: 0;
+      color: #050505;
+      font-size: clamp(28px, 6vw, 38px);
+      font-weight: 700;
+      letter-spacing: -.055em;
+      line-height: 1.04;
     }
 
-    .store-modal__text{
-      margin:16px 0 25px;
-      color:#555;
-      font-size:16px;
-      line-height:1.55
+    .store-modal__text {
+      margin: 16px 0 25px;
+      color: #555;
+      font-size: 16px;
+      line-height: 1.55;
     }
 
-    .store-modal__status{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      gap:9px;
-      padding:12px 20px;
-      border:0;
-      border-radius:999px;
-      background:#050505;
-      box-shadow:0 8px 18px rgba(0,0,0,.14);
-      color:#fff;
-      font:500 11px 'DM Mono',monospace;
-      letter-spacing:.06em;
-      cursor:pointer;
-      transition:transform .18s ease,box-shadow .18s ease
+    .store-modal__status {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      padding: 12px 20px;
+      border: 0;
+      border-radius: 999px;
+      background: #050505;
+      box-shadow: 0 8px 18px rgba(0, 0, 0, .14);
+      color: #fff;
+      font: 500 11px 'DM Mono', monospace;
+      letter-spacing: .06em;
+      cursor: pointer;
+      transition: transform .18s ease, box-shadow .18s ease;
     }
 
-    .store-modal__status:hover{
-      box-shadow:0 13px 26px rgba(24,174,187,.26);
-      transform:translateY(-2px)
+    .store-modal__status:hover {
+      box-shadow: 0 13px 26px rgba(24, 174, 187, .26);
+      transform: translateY(-2px);
     }
 
-    .store-modal__status:active{
-      transform:translateY(0)
+    .store-modal__status:active {
+      transform: translateY(0);
     }
 
     .store-modal__status span,
-    .early-modal__button span{
-      width:8px;
-      height:8px;
-      border-radius:50%;
-      background:#66dce8;
-      box-shadow:0 0 12px rgba(102,220,232,.9)
+    .early-modal__button span {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #66dce8;
+      box-shadow: 0 0 12px rgba(102, 220, 232, .9);
     }
 
-    .early-modal__card{
-      position:relative;
-      z-index:1;
-      top:50%;
-      left:50%;
-      width:min(calc(100vw - 32px),520px);
-      padding:42px 38px 32px;
-      border:1px solid rgba(255,255,255,.9);
-      border-radius:32px;
-      background:rgba(255,255,255,.98);
+    .early-modal__card {
+      position: relative;
+      z-index: 1;
+      top: 50%;
+      left: 50%;
+      width: min(calc(100vw - 32px), 520px);
+      padding: 42px 38px 32px;
+      border: 1px solid rgba(255, 255, 255, .9);
+      border-radius: 32px;
+      background: rgba(255, 255, 255, .98);
       box-shadow:
-        0 30px 90px rgba(4,22,25,.28),
-        0 2px 8px rgba(0,0,0,.08);
-      transform:translate(-50%,-50%);
-      text-align:center
+        0 30px 90px rgba(4, 22, 25, .28),
+        0 2px 8px rgba(0, 0, 0, .08);
+      transform: translate(-50%, -50%);
+      text-align: center;
     }
 
-    .early-modal__logo{
-      display:block;
-      width:112px;
-      height:112px;
-      margin:0 auto 20px;
-      object-fit:contain;
-      filter:drop-shadow(0 15px 14px rgba(0,0,0,.22))
+    .early-modal__logo {
+      display: block;
+      width: 112px;
+      height: 112px;
+      margin: 0 auto 20px;
+      object-fit: contain;
+      filter: drop-shadow(0 15px 14px rgba(0, 0, 0, .22));
     }
 
-    .early-modal h2{
-      max-width:390px;
-      margin:0 auto;
-      color:#050505;
-      font-size:clamp(31px,6vw,43px);
-      font-weight:700;
-      letter-spacing:-.065em;
-      line-height:1.02
+    .early-modal h2 {
+      max-width: 390px;
+      margin: 0 auto;
+      color: #050505;
+      font-size: clamp(31px, 6vw, 43px);
+      font-weight: 700;
+      letter-spacing: -.065em;
+      line-height: 1.02;
     }
 
-    .early-modal__text{
-      max-width:400px;
-      margin:16px auto 25px;
-      color:rgba(5,5,5,.66);
-      font-size:15px;
-      line-height:1.6
+    .early-modal__text {
+      max-width: 400px;
+      margin: 16px auto 25px;
+      color: rgba(5, 5, 5, .66);
+      font-size: 15px;
+      line-height: 1.6;
     }
 
-    .early-modal__form{
-      display:grid;
-      gap:11px
+    .early-modal__form {
+      display: grid;
+      gap: 11px;
     }
 
-    .early-modal__input{
-      width:100%;
-      min-height:55px;
-      padding:0 18px;
-      border:1px solid #dedede;
-      border-radius:17px;
-      outline:0;
-      background:#fff;
-      color:#050505;
-      font:500 16px 'Space Grotesk',Arial,sans-serif
+    .early-modal__input {
+      width: 100%;
+      min-height: 55px;
+      padding: 0 18px;
+      border: 1px solid #dedede;
+      border-radius: 17px;
+      outline: 0;
+      background: #fff;
+      color: #050505;
+      font: 500 16px 'Space Grotesk', Arial, sans-serif;
     }
 
-    .early-modal__input:focus{
-      border-color:#66dce8;
-      box-shadow:0 0 0 4px rgba(102,220,232,.2)
+    .early-modal__input:focus {
+      border-color: #66dce8;
+      box-shadow: 0 0 0 4px rgba(102, 220, 232, .2);
     }
 
-    .early-modal__button{
-      display:flex;
-      min-height:56px;
-      align-items:center;
-      justify-content:center;
-      gap:10px;
-      border:1px solid #050505;
-      border-radius:999px;
-      background:#050505;
-      box-shadow:0 10px 22px rgba(0,0,0,.16);
-      color:#fff;
-      cursor:pointer;
-      font:500 13px 'DM Mono',monospace;
-      letter-spacing:.025em;
-      transition:transform .18s,box-shadow .18s
+    .early-modal__button {
+      display: flex;
+      min-height: 56px;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      border: 1px solid #050505;
+      border-radius: 999px;
+      background: #050505;
+      box-shadow: 0 10px 22px rgba(0, 0, 0, .16);
+      color: #fff;
+      cursor: pointer;
+      font: 500 13px 'DM Mono', monospace;
+      letter-spacing: .025em;
+      transition: transform .18s, box-shadow .18s;
     }
 
-    .early-modal__button:hover{
-      box-shadow:0 13px 26px rgba(24,174,187,.26);
-      transform:translateY(-2px)
+    .early-modal__button:hover {
+      box-shadow: 0 13px 26px rgba(24, 174, 187, .26);
+      transform: translateY(-2px);
     }
 
-    .early-modal__privacy{
-      margin:15px 3px 0;
-      color:rgba(5,5,5,.55);
-      font-size:10px;
-      line-height:1.55
+    .early-modal__privacy {
+      margin: 15px 3px 0;
+      color: rgba(5, 5, 5, .55);
+      font-size: 10px;
+      line-height: 1.55;
     }
 
-    .early-modal__privacy a{
-      color:#050505;
-      text-decoration-color:#66dce8;
-      text-underline-offset:3px
+    .early-modal__privacy a {
+      color: #050505;
+      text-decoration-color: #66dce8;
+      text-underline-offset: 3px;
     }
 
-    .early-modal__success{
-      display:none;
-      padding:7px 0 4px;
-      color:#168e99;
-      font-size:14px;
-      font-weight:600
+    .early-modal__success {
+      display: none;
+      padding: 7px 0 4px;
+      color: #168e99;
+      font-size: 14px;
+      font-weight: 600;
     }
 
     .early-modal.is-success .early-modal__form,
-    .early-modal.is-success .early-modal__privacy{
-      display:none
+    .early-modal.is-success .early-modal__privacy {
+      display: none;
     }
 
-    .early-modal.is-success .early-modal__success{
-      display:block
+    .early-modal.is-success .early-modal__success {
+      display: block;
     }
 
-    .early-access-trigger{
-      border:0;
-      cursor:pointer;
-      transition:transform .18s ease,box-shadow .18s ease
+    .early-access-trigger {
+      border: 0;
+      cursor: pointer;
+      transition: transform .18s ease, box-shadow .18s ease;
     }
 
-    .early-access-trigger:hover{
-      box-shadow:0 10px 22px rgba(24,174,187,.28);
-      transform:translateY(-2px)
+    .early-access-trigger:hover {
+      box-shadow: 0 10px 22px rgba(24, 174, 187, .28);
+      transform: translateY(-2px);
     }
 
-    @media(max-width:600px){
+    /* Language switch */
+    .language-switch {
+      display: inline-flex;
+      align-items: center;
+      gap: 3px;
+      margin-left: auto;
+      padding: 3px;
+      border: 1px solid rgba(0, 0, 0, .09);
+      border-radius: 999px;
+      background: rgba(0, 0, 0, .035);
+      font: 500 10px 'DM Mono', monospace;
+      letter-spacing: .04em;
+    }
 
-      .store-modal__card{
-        padding:42px 24px 30px;
-        border-radius:26px
+    .language-switch a,
+    .language-switch span {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 31px;
+      height: 25px;
+      border-radius: 999px;
+      color: rgba(5, 5, 5, .48);
+      text-decoration: none;
+      transition: background .18s ease, color .18s ease, transform .18s ease;
+    }
+
+    .language-switch a:hover {
+      color: #050505;
+      transform: translateY(-1px);
+    }
+
+    .language-switch .active {
+      background: #050505;
+      color: #fff;
+      box-shadow: 0 3px 8px rgba(0, 0, 0, .12);
+    }
+
+    @media(max-width: 600px) {
+      .store-modal__card {
+        padding: 42px 24px 30px;
+        border-radius: 26px;
       }
 
-      .store-modal__logo{
-        width:105px;
-        height:105px;
-        margin-bottom:20px
+      .store-modal__logo {
+        width: 105px;
+        height: 105px;
+        margin-bottom: 20px;
       }
 
-      .early-modal__card{
-        padding:38px 24px 28px;
-        border-radius:27px
+      .early-modal__card {
+        padding: 38px 24px 28px;
+        border-radius: 27px;
       }
 
-      .early-modal__logo{
-        width:100px;
-        height:100px;
-        margin-bottom:17px
+      .early-modal__logo {
+        width: 100px;
+        height: 100px;
+        margin-bottom: 17px;
       }
 
+      .language-switch {
+        margin-left: 12px;
+      }
     }
   </style>
 </head>
@@ -358,7 +397,6 @@
 
   <div class="page">
 
-    <!-- HEADER -->
     <header class="site-header">
 
       <div class="brand">
@@ -376,8 +414,6 @@
 
     </header>
 
-
-    <!-- MAIN -->
     <main>
 
       <section
@@ -387,9 +423,7 @@
         <div id="logo3d"></div>
       </section>
 
-
       <p class="claim">
-
         <span class="claim-main">
           NextRound. The Multiplayer Party App.
         </span>
@@ -397,11 +431,8 @@
         <span class="claim-sub">
           Everyone on their own phone. Everyone in the same game.
         </span>
-
       </p>
 
-
-      <!-- SOCIAL / STORE ICONS -->
       <div
         class="icon-row"
         aria-label="Next Round Links"
@@ -415,16 +446,10 @@
           rel="noopener"
           aria-label="Instagram"
         >
-
-          <svg
-            viewBox="0 0 24 24"
-            aria-hidden="true"
-          >
+          <svg viewBox="0 0 24 24" aria-hidden="true">
             <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7Zm5 2.7A5.3 5.3 0 1 1 6.7 12 5.3 5.3 0 0 1 12 6.7Zm0 2A3.3 3.3 0 1 0 15.3 12 3.3 3.3 0 0 0 12 8.7ZM18 5.5a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5Z"/>
           </svg>
-
         </a>
-
 
         <!-- TikTok -->
         <a
@@ -434,16 +459,10 @@
           rel="noopener"
           aria-label="TikTok"
         >
-
-          <svg
-            viewBox="0 0 24 24"
-            aria-hidden="true"
-          >
+          <svg viewBox="0 0 24 24" aria-hidden="true">
             <path d="M15.8 2c.4 2.7 1.9 4.4 4.2 4.6v3.1c-1.5.1-2.8-.4-4.1-1.2v6.2c0 5-5.5 6.5-8.3 4.1-1.8-1.5-2-5.1-.4-6.8 1.1-1.2 2.6-1.7 4.4-1.4v3.1c-.8-.3-1.7.1-2 .7-.4.9.1 1.9 1 2.1 1.3.4 2.4-.6 2.4-1.9V2h2.8Z"/>
           </svg>
-
         </a>
-
 
         <!-- App Store -->
         <button
@@ -452,16 +471,10 @@
           data-store-modal
           aria-label="App Store"
         >
-
-          <svg
-            viewBox="0 0 24 24"
-            aria-hidden="true"
-          >
+          <svg viewBox="0 0 24 24" aria-hidden="true">
             <path d="M17.1 12.7c0-2.2 1.8-3.2 1.9-3.3-1-1.5-2.6-1.7-3.2-1.7-1.4-.1-2.7.8-3.4.8-.7 0-1.7-.8-2.8-.8-1.5 0-2.8.9-3.5 2.2-1.5 2.6-.4 6.4 1 8.4.7 1 1.5 2.1 2.6 2.1 1 0 1.4-.7 2.7-.7 1.2 0 1.6.7 2.7.7 1.1 0 1.8-1 2.5-2 .8-1.1 1.1-2.2 1.1-2.3-.1 0-2.1-.8-2.1-3.4ZM14.9 6.3c.6-.8 1-1.8.9-2.9-.9 0-2 .6-2.6 1.4-.6.7-1.1 1.8-1 2.8 1 .1 2-.5 2.7-1.3Z"/>
           </svg>
-
         </button>
-
 
         <!-- Google Play -->
         <button
@@ -470,7 +483,6 @@
           data-store-modal
           aria-label="Google Play"
         >
-
           <svg
             class="play"
             viewBox="0 0 24 24"
@@ -478,9 +490,7 @@
           >
             <path d="M3.5 2.4 13.9 12 3.5 21.6c-.3-.4-.5-.9-.5-1.5V3.9c0-.6.2-1.1.5-1.5Zm11.9 11 2.5-2.3c.8.4 2.2 1.2 2.8 1.5.5.3.5.8 0 1.1l-2.8 1.5-2.5-2.4Zm-1.8.2-8.8 8.1c.4.2.9.2 1.4-.1l9.4-5.2-2-2.8Zm0-3.2 2-2.8-9.4-5.2c-.5-.3-1-.3-1.4-.1l8.8 8.1Z"/>
           </svg>
-
         </button>
-
 
         <!-- Web App -->
         <a
@@ -490,22 +500,18 @@
           rel="noopener"
           aria-label="Open NextRound Web App"
         >
-
           <img
-            src="../C109D335-EFBE-4BED-9522-CA814AA267DD.png"
+            src="C109D335-EFBE-4BED-9522-CA814AA267DD.png"
             alt=""
             aria-hidden="true"
             style="width:28px;height:28px;object-fit:contain"
           >
-
         </a>
 
       </div>
 
     </main>
 
-
-    <!-- FOOTER -->
     <footer class="site-footer">
 
       <span>
@@ -513,24 +519,29 @@
       </span>
 
       <nav>
-
-        <a href="../impressum.html">
-          Legal Notice
-        </a>
-
-        <a href="../datenschutz.html">
-          Privacy Policy
-        </a>
-
-        <a href="../nutzungsbedingungen.html">
-          Terms of Use
-        </a>
-
-        <a href="../agb.html">
-          Terms &amp; Conditions
-        </a>
-
+        <a href="impressum.html">Legal Notice</a>
+        <a href="datenschutz.html">Privacy Policy</a>
+        <a href="nutzungsbedingungen.html">Terms of Use</a>
+        <a href="agb.html">Terms & Conditions</a>
       </nav>
+
+      <!-- Language Switch -->
+      <div
+        class="language-switch"
+        aria-label="Language selection"
+      >
+        <a href="../index.html" aria-label="German version">
+          DE
+        </a>
+
+        <span
+          class="active"
+          aria-current="page"
+          aria-label="English version"
+        >
+          EN
+        </span>
+      </div>
 
     </footer>
 
@@ -538,6 +549,7 @@
 
 
   <!-- APP STORE / GOOGLE PLAY MODAL -->
+
   <div
     class="store-modal"
     id="store-modal"
@@ -552,7 +564,6 @@
       data-close-modal
     ></div>
 
-
     <section class="store-modal__card">
 
       <button
@@ -564,29 +575,24 @@
         ×
       </button>
 
-
       <img
         class="store-modal__logo"
-        src="../C109D335-EFBE-4BED-9522-CA814AA267DD.png"
+        src="C109D335-EFBE-4BED-9522-CA814AA267DD.png"
         alt="NextRound Logo"
       >
-
 
       <p class="store-modal__kicker">
         COMING SOON
       </p>
 
-
       <h2 id="modal-title">
         The app is coming soon.
       </h2>
 
-
       <p class="store-modal__text">
-        We are working hard to get everything ready.<br>
+        We're working hard to get everything ready.<br>
         Stay tuned!
       </p>
-
 
       <button
         class="store-modal__status"
@@ -603,6 +609,7 @@
 
 
   <!-- EARLY ACCESS MODAL -->
+
   <div
     class="early-modal"
     id="early-modal"
@@ -617,7 +624,6 @@
       data-close-early
     ></div>
 
-
     <section class="early-modal__card">
 
       <button
@@ -629,29 +635,24 @@
         ×
       </button>
 
-
       <img
         class="early-modal__logo"
-        src="../C109D335-EFBE-4BED-9522-CA814AA267DD.png"
+        src="C109D335-EFBE-4BED-9522-CA814AA267DD.png"
         alt="NextRound Logo"
       >
-
 
       <p class="early-modal__kicker">
         EARLY ACCESS
       </p>
 
-
       <h2 id="early-modal-title">
         Your next night starts here.
       </h2>
 
-
       <p class="early-modal__text">
-        Get Early Access and be among the first to know when NextRound
-        and the online access become available.
+        Get Early Access and be the first to know when
+        NextRound and the online access become available.
       </p>
-
 
       <form
         class="early-modal__form"
@@ -667,7 +668,6 @@
           required
         >
 
-
         <button
           class="early-modal__button"
           type="submit"
@@ -678,25 +678,20 @@
 
       </form>
 
-
       <p
         class="early-modal__success"
         aria-live="polite"
       >
-        Thank you! The email integration will be available soon.
+        Thank you! The email connection will be available soon.
       </p>
 
-
       <p class="early-modal__privacy">
-
         By signing up, you agree that we may contact you by email
-        about the release and online access. For more information,
-        please see our
-
-        <a href="../datenschutz.html">
+        about the release and web access. More information can be
+        found in our
+        <a href="datenschutz.html">
           Privacy Policy
         </a>.
-
       </p>
 
     </section>
@@ -704,66 +699,53 @@
   </div>
 
 
-  <!-- JAVASCRIPT -->
   <script>
+
+    /* Year */
 
     document.getElementById("year").textContent =
       new Date().getFullYear();
 
 
-    /* ---------------------------------
-       STORE MODAL
-    --------------------------------- */
+    /* Store Modal */
 
     const storeModal =
       document.getElementById("store-modal");
 
 
     const openStoreModal = () => {
-
       storeModal.hidden = false;
-
       document.body.style.overflow = "hidden";
-
     };
 
 
     const closeStoreModal = () => {
-
       storeModal.hidden = true;
-
       document.body.style.overflow = "";
-
     };
 
 
     document
       .querySelectorAll("[data-store-modal]")
       .forEach((button) => {
-
         button.addEventListener(
           "click",
           openStoreModal
         );
-
       });
 
 
     document
       .querySelectorAll("[data-close-modal]")
       .forEach((button) => {
-
         button.addEventListener(
           "click",
           closeStoreModal
         );
-
       });
 
 
-    /* ---------------------------------
-       EARLY ACCESS MODAL
-    --------------------------------- */
+    /* Early Access Modal */
 
     const earlyModal =
       document.getElementById("early-modal");
@@ -781,11 +763,8 @@
 
       document.body.style.overflow = "hidden";
 
-
       setTimeout(() => {
-
         earlyEmail.focus();
-
       }, 120);
 
     };
@@ -803,10 +782,6 @@
       });
 
 
-    /* ---------------------------------
-       OPEN EARLY ACCESS FROM STORE MODAL
-    --------------------------------- */
-
     document
       .querySelectorAll("[data-open-early-from-store]")
       .forEach((button) => {
@@ -816,7 +791,6 @@
           () => {
 
             closeStoreModal();
-
             openEarlyModal();
 
           }
@@ -824,10 +798,6 @@
 
       });
 
-
-    /* ---------------------------------
-       CLOSE EARLY ACCESS
-    --------------------------------- */
 
     const closeEarlyModal = () => {
 
@@ -855,10 +825,11 @@
       });
 
 
-    /* ---------------------------------
-       EARLY ACCESS FORM
-       EMAIL IS NOT SAVED YET
-    --------------------------------- */
+    /*
+      IMPORTANT:
+      The email address is NOT stored or sent anywhere here.
+      This is intentionally unchanged.
+    */
 
     earlyForm.addEventListener(
       "submit",
@@ -874,23 +845,17 @@
     );
 
 
-    /* ---------------------------------
-       ESCAPE KEY
-    --------------------------------- */
+    /* ESC closes modals */
 
     document.addEventListener(
       "keydown",
       (event) => {
 
-        if (event.key !== "Escape") {
-          return;
-        }
-
+        if (event.key !== "Escape") return;
 
         if (!storeModal.hidden) {
           closeStoreModal();
         }
-
 
         if (!earlyModal.hidden) {
           closeEarlyModal();
@@ -900,10 +865,7 @@
     );
 
 
-    /* ---------------------------------
-       AUTOMATIC EARLY ACCESS POPUP
-       AFTER 10 SECONDS
-    --------------------------------- */
+    /* Automatic Early Access popup */
 
     if (
       !sessionStorage.getItem(
@@ -921,10 +883,9 @@
   </script>
 
 
-  <!-- 3D HERO FROM MAIN DIRECTORY -->
   <script
     type="module"
-    src="../hero-3d.js"
+    src="hero-3d.js"
   ></script>
 
 </body>
