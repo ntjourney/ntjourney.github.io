@@ -38,6 +38,7 @@
     content="https://ntjourney.github.io/en/C109D335-EFBE-4BED-9522-CA814AA267DD.png"
   >
 
+  <!-- English version uses the CSS from the English folder -->
   <link rel="stylesheet" href="home.css">
 
   <style>
@@ -64,6 +65,10 @@
       opacity: .68;
     }
 
+    /* ---------------------------------
+       MODALS
+    --------------------------------- */
+
     .store-modal[hidden],
     .early-modal[hidden] {
       display: none;
@@ -87,6 +92,10 @@
       background: rgba(5, 5, 5, .42);
       backdrop-filter: blur(10px);
     }
+
+    /* ---------------------------------
+       STORE MODAL
+    --------------------------------- */
 
     .store-modal__card {
       position: relative;
@@ -119,7 +128,9 @@
       font-size: 24px;
       line-height: 1;
       cursor: pointer;
-      transition: transform .18s, background .18s;
+      transition:
+        transform .18s,
+        background .18s;
     }
 
     .store-modal__close:hover,
@@ -161,6 +172,8 @@
       line-height: 1.55;
     }
 
+    /* EARLY ACCESS BUTTON */
+
     .store-modal__status {
       display: inline-flex;
       align-items: center;
@@ -175,7 +188,9 @@
       font: 500 11px 'DM Mono', monospace;
       letter-spacing: .06em;
       cursor: pointer;
-      transition: transform .18s ease, box-shadow .18s ease;
+      transition:
+        transform .18s ease,
+        box-shadow .18s ease;
     }
 
     .store-modal__status:hover {
@@ -195,6 +210,10 @@
       background: #66dce8;
       box-shadow: 0 0 12px rgba(102, 220, 232, .9);
     }
+
+    /* ---------------------------------
+       EARLY ACCESS MODAL
+    --------------------------------- */
 
     .early-modal__card {
       position: relative;
@@ -276,7 +295,9 @@
       cursor: pointer;
       font: 500 13px 'DM Mono', monospace;
       letter-spacing: .025em;
-      transition: transform .18s, box-shadow .18s;
+      transition:
+        transform .18s,
+        box-shadow .18s;
     }
 
     .early-modal__button:hover {
@@ -314,10 +335,16 @@
       display: block;
     }
 
+    /* ---------------------------------
+       EARLY ACCESS HEADER BUTTON
+    --------------------------------- */
+
     .early-access-trigger {
       border: 0;
       cursor: pointer;
-      transition: transform .18s ease, box-shadow .18s ease;
+      transition:
+        transform .18s ease,
+        box-shadow .18s ease;
     }
 
     .early-access-trigger:hover {
@@ -325,12 +352,15 @@
       transform: translateY(-2px);
     }
 
-    /* Language switch */
+    /* ---------------------------------
+       LANGUAGE SWITCH
+    --------------------------------- */
+
     .language-switch {
       display: inline-flex;
       align-items: center;
       gap: 3px;
-      margin-left: auto;
+      margin-left: 18px;
       padding: 3px;
       border: 1px solid rgba(0, 0, 0, .09);
       border-radius: 999px;
@@ -349,7 +379,10 @@
       border-radius: 999px;
       color: rgba(5, 5, 5, .48);
       text-decoration: none;
-      transition: background .18s ease, color .18s ease, transform .18s ease;
+      transition:
+        background .18s ease,
+        color .18s ease,
+        transform .18s ease;
     }
 
     .language-switch a:hover {
@@ -363,7 +396,12 @@
       box-shadow: 0 3px 8px rgba(0, 0, 0, .12);
     }
 
+    /* ---------------------------------
+       MOBILE
+    --------------------------------- */
+
     @media(max-width: 600px) {
+
       .store-modal__card {
         padding: 42px 24px 30px;
         border-radius: 26px;
@@ -391,11 +429,22 @@
       }
     }
   </style>
+
+  <!-- Premium 3D Hero -->
+  <script>
+    const premiumHero = document.createElement('script');
+    premiumHero.src = 'hero-premium.js';
+    premiumHero.defer = true;
+    document.head.appendChild(premiumHero);
+  </script>
+
 </head>
 
 <body>
 
   <div class="page">
+
+    <!-- HEADER -->
 
     <header class="site-header">
 
@@ -414,7 +463,12 @@
 
     </header>
 
+
+    <!-- MAIN -->
+
     <main>
+
+      <!-- 3D HERO -->
 
       <section
         class="hero-3d"
@@ -423,7 +477,11 @@
         <div id="logo3d"></div>
       </section>
 
+
+      <!-- CLAIM -->
+
       <p class="claim">
+
         <span class="claim-main">
           NextRound. The Multiplayer Party App.
         </span>
@@ -431,7 +489,11 @@
         <span class="claim-sub">
           Everyone on their own phone. Everyone in the same game.
         </span>
+
       </p>
+
+
+      <!-- SOCIAL / STORE ICONS -->
 
       <div
         class="icon-row"
@@ -439,6 +501,7 @@
       >
 
         <!-- Instagram -->
+
         <a
           class="icon-button"
           href="https://www.instagram.com/nt_j0urney?igsh=Z3h2dmNkZ2piNjZh"
@@ -446,12 +509,19 @@
           rel="noopener"
           aria-label="Instagram"
         >
-          <svg viewBox="0 0 24 24" aria-hidden="true">
+
+          <svg
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+          >
             <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7Zm5 2.7A5.3 5.3 0 1 1 6.7 12 5.3 5.3 0 0 1 12 6.7Zm0 2A3.3 3.3 0 1 0 15.3 12 3.3 3.3 0 0 0 12 8.7ZM18 5.5a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5Z"/>
           </svg>
+
         </a>
 
+
         <!-- TikTok -->
+
         <a
           class="icon-button"
           href="https://www.tiktok.com/@nt_journey?_r=1&_t=ZG-98kAqMVzl0T"
@@ -459,30 +529,45 @@
           rel="noopener"
           aria-label="TikTok"
         >
-          <svg viewBox="0 0 24 24" aria-hidden="true">
+
+          <svg
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+          >
             <path d="M15.8 2c.4 2.7 1.9 4.4 4.2 4.6v3.1c-1.5.1-2.8-.4-4.1-1.2v6.2c0 5-5.5 6.5-8.3 4.1-1.8-1.5-2-5.1-.4-6.8 1.1-1.2 2.6-1.7 4.4-1.4v3.1c-.8-.3-1.7.1-2 .7-.4.9.1 1.9 1 2.1 1.3.4 2.4-.6 2.4-1.9V2h2.8Z"/>
           </svg>
+
         </a>
 
+
         <!-- App Store -->
+
         <button
           class="icon-button"
           type="button"
           data-store-modal
           aria-label="App Store"
         >
-          <svg viewBox="0 0 24 24" aria-hidden="true">
+
+          <svg
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+          >
             <path d="M17.1 12.7c0-2.2 1.8-3.2 1.9-3.3-1-1.5-2.6-1.7-3.2-1.7-1.4-.1-2.7.8-3.4.8-.7 0-1.7-.8-2.8-.8-1.5 0-2.8.9-3.5 2.2-1.5 2.6-.4 6.4 1 8.4.7 1 1.5 2.1 2.6 2.1 1 0 1.4-.7 2.7-.7 1.2 0 1.6.7 2.7.7 1.1 0 1.8-1 2.5-2 .8-1.1 1.1-2.2 1.1-2.3-.1 0-2.1-.8-2.1-3.4ZM14.9 6.3c.6-.8 1-1.8.9-2.9-.9 0-2 .6-2.6 1.4-.6.7-1.1 1.8-1 2.8 1 .1 2-.5 2.7-1.3Z"/>
           </svg>
+
         </button>
 
+
         <!-- Google Play -->
+
         <button
           class="icon-button"
           type="button"
           data-store-modal
           aria-label="Google Play"
         >
+
           <svg
             class="play"
             viewBox="0 0 24 24"
@@ -490,9 +575,12 @@
           >
             <path d="M3.5 2.4 13.9 12 3.5 21.6c-.3-.4-.5-.9-.5-1.5V3.9c0-.6.2-1.1.5-1.5Zm11.9 11 2.5-2.3c.8.4 2.2 1.2 2.8 1.5.5.3.5.8 0 1.1l-2.8 1.5-2.5-2.4Zm-1.8.2-8.8 8.1c.4.2.9.2 1.4-.1l9.4-5.2-2-2.8Zm0-3.2 2-2.8-9.4-5.2c-.5-.3-1-.3-1.4-.1l8.8 8.1Z"/>
           </svg>
+
         </button>
 
+
         <!-- Web App -->
+
         <a
           class="icon-button"
           href="https://next-round-f1d727ea.base44.app/"
@@ -500,17 +588,22 @@
           rel="noopener"
           aria-label="Open NextRound Web App"
         >
+
           <img
             src="C109D335-EFBE-4BED-9522-CA814AA267DD.png"
             alt=""
             aria-hidden="true"
             style="width:28px;height:28px;object-fit:contain"
           >
+
         </a>
 
       </div>
 
     </main>
+
+
+    <!-- FOOTER -->
 
     <footer class="site-footer">
 
@@ -519,18 +612,37 @@
       </span>
 
       <nav>
-        <a href="impressum.html">Legal Notice</a>
-        <a href="datenschutz.html">Privacy Policy</a>
-        <a href="nutzungsbedingungen.html">Terms of Use</a>
-        <a href="agb.html">Terms & Conditions</a>
+
+        <a href="../impressum.html">
+          Legal Notice
+        </a>
+
+        <a href="../datenschutz.html">
+          Privacy Policy
+        </a>
+
+        <a href="../nutzungsbedingungen.html">
+          Terms of Use
+        </a>
+
+        <a href="../agb.html">
+          Terms &amp; Conditions
+        </a>
+
       </nav>
 
-      <!-- Language Switch -->
+
+      <!-- LANGUAGE SWITCH -->
+
       <div
         class="language-switch"
         aria-label="Language selection"
       >
-        <a href="../index.html" aria-label="German version">
+
+        <a
+          href="../index.html"
+          aria-label="German version"
+        >
           DE
         </a>
 
@@ -541,6 +653,7 @@
         >
           EN
         </span>
+
       </div>
 
     </footer>
@@ -548,7 +661,9 @@
   </div>
 
 
-  <!-- APP STORE / GOOGLE PLAY MODAL -->
+  <!-- =================================
+       APP STORE / GOOGLE PLAY MODAL
+  ================================= -->
 
   <div
     class="store-modal"
@@ -564,6 +679,7 @@
       data-close-modal
     ></div>
 
+
     <section class="store-modal__card">
 
       <button
@@ -575,32 +691,40 @@
         ×
       </button>
 
+
       <img
         class="store-modal__logo"
         src="C109D335-EFBE-4BED-9522-CA814AA267DD.png"
         alt="NextRound Logo"
       >
 
+
       <p class="store-modal__kicker">
         COMING SOON
       </p>
 
+
       <h2 id="modal-title">
         The app is coming soon.
       </h2>
+
 
       <p class="store-modal__text">
         We're working hard to get everything ready.<br>
         Stay tuned!
       </p>
 
+
       <button
         class="store-modal__status"
         type="button"
         data-open-early-from-store
       >
+
         <span></span>
+
         EARLY ACCESS
+
       </button>
 
     </section>
@@ -608,7 +732,9 @@
   </div>
 
 
-  <!-- EARLY ACCESS MODAL -->
+  <!-- =================================
+       EARLY ACCESS MODAL
+  ================================= -->
 
   <div
     class="early-modal"
@@ -624,6 +750,7 @@
       data-close-early
     ></div>
 
+
     <section class="early-modal__card">
 
       <button
@@ -635,24 +762,29 @@
         ×
       </button>
 
+
       <img
         class="early-modal__logo"
         src="C109D335-EFBE-4BED-9522-CA814AA267DD.png"
         alt="NextRound Logo"
       >
 
+
       <p class="early-modal__kicker">
         EARLY ACCESS
       </p>
+
 
       <h2 id="early-modal-title">
         Your next night starts here.
       </h2>
 
+
       <p class="early-modal__text">
-        Get Early Access and be the first to know when
-        NextRound and the online access become available.
+        Get Early Access and be among the first to know when
+        NextRound and online access become available.
       </p>
+
 
       <form
         class="early-modal__form"
@@ -668,15 +800,20 @@
           required
         >
 
+
         <button
           class="early-modal__button"
           type="submit"
         >
+
           <span></span>
+
           Secure Early Access
+
         </button>
 
       </form>
+
 
       <p
         class="early-modal__success"
@@ -685,13 +822,17 @@
         Thank you! The email connection will be available soon.
       </p>
 
+
       <p class="early-modal__privacy">
+
         By signing up, you agree that we may contact you by email
         about the release and web access. More information can be
         found in our
-        <a href="datenschutz.html">
+
+        <a href="../datenschutz.html">
           Privacy Policy
         </a>.
+
       </p>
 
     </section>
@@ -699,53 +840,73 @@
   </div>
 
 
+  <!-- =================================
+       JAVASCRIPT
+  ================================= -->
+
   <script>
 
-    /* Year */
+    /* ---------------------------------
+       YEAR
+    --------------------------------- */
 
     document.getElementById("year").textContent =
       new Date().getFullYear();
 
 
-    /* Store Modal */
+    /* ---------------------------------
+       STORE MODAL
+    --------------------------------- */
 
     const storeModal =
       document.getElementById("store-modal");
 
 
     const openStoreModal = () => {
+
       storeModal.hidden = false;
+
       document.body.style.overflow = "hidden";
+
     };
 
 
     const closeStoreModal = () => {
+
       storeModal.hidden = true;
+
       document.body.style.overflow = "";
+
     };
 
 
     document
       .querySelectorAll("[data-store-modal]")
       .forEach((button) => {
+
         button.addEventListener(
           "click",
           openStoreModal
         );
+
       });
 
 
     document
       .querySelectorAll("[data-close-modal]")
       .forEach((button) => {
+
         button.addEventListener(
           "click",
           closeStoreModal
         );
+
       });
 
 
-    /* Early Access Modal */
+    /* ---------------------------------
+       EARLY ACCESS MODAL
+    --------------------------------- */
 
     const earlyModal =
       document.getElementById("early-modal");
@@ -763,8 +924,11 @@
 
       document.body.style.overflow = "hidden";
 
+
       setTimeout(() => {
+
         earlyEmail.focus();
+
       }, 120);
 
     };
@@ -782,6 +946,10 @@
       });
 
 
+    /* ---------------------------------
+       EARLY ACCESS FROM STORE MODAL
+    --------------------------------- */
+
     document
       .querySelectorAll("[data-open-early-from-store]")
       .forEach((button) => {
@@ -791,6 +959,7 @@
           () => {
 
             closeStoreModal();
+
             openEarlyModal();
 
           }
@@ -798,6 +967,10 @@
 
       });
 
+
+    /* ---------------------------------
+       CLOSE EARLY ACCESS
+    --------------------------------- */
 
     const closeEarlyModal = () => {
 
@@ -825,11 +998,13 @@
       });
 
 
-    /*
-      IMPORTANT:
-      The email address is NOT stored or sent anywhere here.
-      This is intentionally unchanged.
-    */
+    /* ---------------------------------
+       EMAIL FORM
+       
+       IMPORTANT:
+       The email is intentionally NOT
+       stored or sent anywhere yet.
+    --------------------------------- */
 
     earlyForm.addEventListener(
       "submit",
@@ -845,17 +1020,23 @@
     );
 
 
-    /* ESC closes modals */
+    /* ---------------------------------
+       ESCAPE KEY
+    --------------------------------- */
 
     document.addEventListener(
       "keydown",
       (event) => {
 
-        if (event.key !== "Escape") return;
+        if (event.key !== "Escape") {
+          return;
+        }
+
 
         if (!storeModal.hidden) {
           closeStoreModal();
         }
+
 
         if (!earlyModal.hidden) {
           closeEarlyModal();
@@ -865,7 +1046,10 @@
     );
 
 
-    /* Automatic Early Access popup */
+    /* ---------------------------------
+       AUTOMATIC EARLY ACCESS POPUP
+       AFTER 10 SECONDS
+    --------------------------------- */
 
     if (
       !sessionStorage.getItem(
@@ -881,12 +1065,6 @@
     }
 
   </script>
-
-
-  <script
-    type="module"
-    src="hero-3d.js"
-  ></script>
 
 </body>
 </html>
