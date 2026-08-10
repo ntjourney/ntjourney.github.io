@@ -1,5 +1,25 @@
 (() => {
+  const addLanguageSwitch = () => {
+    const footer = document.querySelector('.site-footer');
+    if (!footer || footer.querySelector('.language-switch')) return;
+    const style = document.createElement('style');
+    style.textContent = `
+      .site-footer { position: relative; }
+      .site-footer .language-switch { position: absolute; top: 0; right: 0; display: inline-flex; gap: 5px; margin: 0; padding: 0; border: 0; background: transparent; font: 500 11px 'DM Mono', monospace; letter-spacing: .04em; }
+      .site-footer .language-switch a, .site-footer .language-switch span { color: rgba(5,5,5,.5); text-decoration: none; }
+      .site-footer .language-switch span::after { content: ' /'; }
+      .site-footer .language-switch .active { color: #050505; font-weight: 700; }
+    `;
+    document.head.appendChild(style);
+    const languageSwitch = document.createElement('div');
+    languageSwitch.className = 'language-switch';
+    languageSwitch.setAttribute('aria-label', 'Sprachauswahl');
+    languageSwitch.innerHTML = '<span class="active" aria-current="page">DE</span><a href="en/" aria-label="Englische Version">EN</a>';
+    footer.appendChild(languageSwitch);
+  };
+
   const init = () => {
+    addLanguageSwitch();
     const host = document.getElementById('logo3d');
     if (!host || host.dataset.heroReady === 'true') return;
     host.dataset.heroReady = 'true';
