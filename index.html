@@ -164,7 +164,7 @@
       gap: 16px;
     }
 
-    /* Legal-Link wie im Impressum */
+    /* Legal-Link */
     .footer-links a {
       text-decoration: none;
       transition: color .18s ease;
@@ -187,20 +187,23 @@
       text-transform: uppercase;
     }
 
-    .language-active,
-    .language-separator {
-      color: #050505;
-      font-weight: 700;
+    /* DE: aktiv, schwarz und fett */
+    .language-switch .language-active,
+    .language-switch .language-separator {
+      color: #050505 !important;
+      font-weight: 700 !important;
     }
 
+    /* EN: inaktiv, heller und normal dick */
     .language-switch a {
-      color: rgba(5, 5, 5, .52);
+      color: #777777 !important;
+      font-weight: 400 !important;
       text-decoration: none;
       transition: color .18s ease;
     }
 
     .language-switch a:hover {
-      color: #168e99;
+      color: #168e99 !important;
       text-decoration: underline;
       text-decoration-color: var(--cyan);
     }
@@ -237,13 +240,15 @@
         gap: 12px;
       }
     }
+
+    /* Entfernt automatisch generierte Pseudoelemente */
     .language-switch::before,
-.language-switch::after,
-.language-switch *::before,
-.language-switch *::after {
-  content: none !important;
-  display: none !important;
-}
+    .language-switch::after,
+    .language-switch *::before,
+    .language-switch *::after {
+      content: none !important;
+      display: none !important;
+    }
   </style>
 </head>
 
@@ -399,9 +404,11 @@
   </div>
 
   <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
 
-    const storeModal = document.getElementById("store-modal");
+    const storeModal =
+      document.getElementById("store-modal");
 
     const openStoreModal = () => {
       storeModal.hidden = false;
@@ -413,21 +420,8 @@
       document.body.style.overflow = "";
     };
 
-    document.querySelectorAll("[data-store-modal]").forEach((button) => {
-      button.addEventListener("click", openStoreModal);
-    });
-
-    document.querySelectorAll("[data-close-modal]").forEach((button) => {
-      button.addEventListener("click", closeStoreModal);
-    });
-
-    document.addEventListener("keydown", (event) => {
-      if (event.key === "Escape" && !storeModal.hidden) {
-        closeStoreModal();
-      }
-    });
-  </script>
-
-  <script type="module" src="hero-3d.js"></script>
-</body>
-</html>
+    document
+      .querySelectorAll("[data-store-modal]")
+      .forEach((button) => {
+        button.addEventListener("click", openStoreModal);
+      });
