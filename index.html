@@ -29,356 +29,378 @@
     content="https://ntjourney.github.io/C109D335-EFBE-4BED-9522-CA814AA267DD.png"
   >
 
+  <!-- Legal-Design zuerst, Startseiten-Design danach -->
+  <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="home.css">
 
   <style>
-  .claim {
-    line-height: 1.1;
-  }
-
-  .claim-main,
-  .claim-sub {
-    display: block;
-  }
-
-  .claim-main {
-    font-size: clamp(1.55rem, 3.2vw, 2.55rem);
-    font-weight: 700;
-    letter-spacing: -.045em;
-  }
-
-  .claim-sub {
-    margin-top: .55rem;
-    font-size: clamp(.95rem, 1.45vw, 1.15rem);
-    font-weight: 500;
-    letter-spacing: -.015em;
-    opacity: .68;
-  }
-
-  .store-modal[hidden] {
-    display: none;
-  }
-
-  .store-modal {
-    position: fixed;
-    z-index: 1000;
-    inset: 0;
-  }
-
-  .store-modal__backdrop {
-    position: absolute;
-    inset: 0;
-    background: rgba(5, 5, 5, .42);
-    backdrop-filter: blur(10px);
-  }
-
-  .store-modal__card {
-    position: relative;
-    z-index: 1;
-    top: 50%;
-    left: 50%;
-    width: min(91vw, 480px);
-    padding: 46px 34px 36px;
-    border: 1px solid rgba(0, 0, 0, .06);
-    border-radius: 30px;
-    background: rgba(255, 255, 255, .97);
-    box-shadow: 0 28px 80px rgba(0, 0, 0, .25);
-    transform: translate(-50%, -50%);
-    text-align: center;
-  }
-
-  .store-modal__close {
-    position: absolute;
-    top: 17px;
-    right: 17px;
-    display: grid;
-    place-items: center;
-    width: 34px;
-    height: 34px;
-    border: 0;
-    border-radius: 50%;
-    background: #f1f1f1;
-    color: #050505;
-    font-size: 24px;
-    line-height: 1;
-    cursor: pointer;
-    transition: transform .18s, background .18s;
-  }
-
-  .store-modal__close:hover {
-    background: #e7e7e7;
-    transform: scale(1.06);
-  }
-
-  .store-modal__logo {
-    display: block;
-    width: 120px;
-    height: 120px;
-    margin: 0 auto 24px;
-    object-fit: contain;
-    filter: drop-shadow(0 14px 12px rgba(0, 0, 0, .22));
-  }
-
-  .store-modal__kicker {
-    margin: 0 0 10px;
-    color: #35bccc;
-    font: 500 11px 'DM Mono', monospace;
-    letter-spacing: .14em;
-  }
-
-  .store-modal h2 {
-    margin: 0;
-    color: #050505;
-    font-size: clamp(28px, 6vw, 38px);
-    font-weight: 700;
-    letter-spacing: -.055em;
-    line-height: 1.04;
-  }
-
-  .store-modal__text {
-    margin: 16px 0 25px;
-    color: #555;
-    font-size: 16px;
-    line-height: 1.55;
-  }
-
-  /* Footer-Aufbau */
-  .site-footer .footer-inner {
-    display: flex;
-    width: 100%;
-    flex-direction: column;
-    gap: 14px;
-  }
-
-  .site-footer .footer-top {
-    display: flex;
-    width: 100%;
-    align-items: center;
-    justify-content: space-between;
-    gap: 18px;
-  }
-
-  .site-footer .footer-links {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-  }
-
-  /* Legal-Link */
-  .footer-links a {
-    text-decoration: none;
-    transition: color .18s ease;
-  }
-
-  .footer-links a:hover {
-    color: #168e99;
-    text-decoration: underline;
-    text-decoration-color: var(--cyan);
-  }
-
-  /* Sprachumschaltung */
-  .language-switch {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    color: #050505;
-    font: 500 11px 'DM Mono', monospace;
-    letter-spacing: .04em;
-    text-transform: uppercase;
-  }
-
-  /* DE: aktiv, schwarz und fett */
-  .language-switch .language-active,
-  .language-switch .language-separator {
-    color: #050505 !important;
-    font-weight: 700 !important;
-  }
-
-  /* EN: inaktiv, heller und normal dick */
-  .language-switch a {
-    color: #777777 !important;
-    font-weight: 400 !important;
-    text-decoration: none;
-    transition: color .18s ease;
-  }
-
-  .language-switch a:hover {
-    color: #168e99 !important;
-    text-decoration: underline;
-    text-decoration-color: var(--cyan);
-  }
-
-  @media (max-width: 600px) {
-    .store-modal__card {
-      padding: 42px 24px 30px;
-      border-radius: 26px;
+    /* Startseite in die Legal-Seiten-Struktur einbetten */
+    .homepage-main {
+      display: block;
+      min-height: auto;
+      padding-top: 18px;
+      padding-bottom: 18px;
     }
 
-    .store-modal__logo {
-      width: 105px;
-      height: 105px;
-      margin-bottom: 20px;
+    .homepage-section {
+      display: flex;
+      min-height: calc(100vh - 190px);
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
     }
 
-    .site-footer {
-      margin-top: 34px;
-      padding-top: 28px;
-      padding-bottom: 38px;
+    .homepage-section .hero-3d {
+      margin: 0 auto;
+    }
+
+    .claim {
+      margin: 14px auto 0;
+      line-height: 1.1;
+    }
+
+    .claim-main,
+    .claim-sub {
+      display: block;
+    }
+
+    .claim-main {
+      font-size: clamp(1.55rem, 3.2vw, 2.55rem);
+      font-weight: 700;
+      letter-spacing: -.045em;
+    }
+
+    .claim-sub {
+      margin-top: .55rem;
+      font-size: clamp(.95rem, 1.45vw, 1.15rem);
+      font-weight: 500;
+      letter-spacing: -.015em;
+      opacity: .68;
+    }
+
+    /* Zusätzliche Gestaltung für die Startseite */
+    .site {
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at 12% 5%, rgba(102,220,232,.14), transparent 30%),
+        radial-gradient(circle at 86% 84%, rgba(24,174,187,.10), transparent 36%);
+    }
+
+    .site-header .header-inner {
+      width: min(100% - 40px, 1120px);
+    }
+
+    .brand {
+      text-decoration: none;
+    }
+
+    .brand-logo img {
+      display: block;
+      width: 32px;
+      height: 32px;
+      object-fit: contain;
+    }
+
+    .brand-name {
+      color: #050505;
     }
 
     .site-footer .footer-inner {
+      display: flex;
+      width: min(100% - 40px, 1120px);
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .footer-top {
+      display: flex;
       width: 100%;
+      align-items: center;
+      justify-content: space-between;
       gap: 18px;
     }
 
-    .site-footer .footer-top {
+    .footer-links {
+      display: flex;
       align-items: center;
-      justify-content: space-between;
+      gap: 16px;
     }
 
-    .site-footer .footer-links {
-      gap: 12px;
+    .footer-links a {
+      text-decoration: none;
+      transition: color .18s ease;
     }
 
-    .site-header .brand-logo {
-      width: 27px;
-      height: 27px;
+    .footer-links a:hover {
+      color: #168e99;
+      text-decoration: underline;
+      text-decoration-color: var(--cyan);
     }
 
-    .site-header .brand {
-      font-size: 15px;
+    /* Sprachumschaltung */
+    .language-switch {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: #050505;
+      font: 500 11px 'DM Mono', monospace;
+      letter-spacing: .04em;
+      text-transform: uppercase;
     }
-  }
 
-  /* Marken-Header: Logo + Next Round */
-  .site-header {
-    display: flex;
-    align-items: center;
-    padding: 22px 0;
-  }
+    .language-switch .language-active,
+    .language-switch .language-separator {
+      color: #050505 !important;
+      font-weight: 700 !important;
+    }
 
-  .site-header .brand {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    color: #050505;
-    font: 700 16px 'Space Grotesk', Arial, sans-serif;
-    letter-spacing: -.04em;
-    text-decoration: none;
-  }
+    .language-switch a {
+      color: #777 !important;
+      font-weight: 400 !important;
+      text-decoration: none;
+      transition: color .18s ease;
+    }
 
-  .site-header .brand-logo {
-    display: block;
-    width: 30px;
-    height: 30px;
-    object-fit: contain;
-  }
+    .language-switch a:hover {
+      color: #168e99 !important;
+      text-decoration: underline;
+      text-decoration-color: var(--cyan);
+    }
 
-  /* Entfernt automatisch generierte Pseudoelemente */
-  .language-switch::before,
-  .language-switch::after,
-  .language-switch *::before,
-  .language-switch *::after {
-    content: none !important;
-    display: none !important;
-  }
-</style>
+    /* Modal */
+    .store-modal[hidden] {
+      display: none;
+    }
+
+    .store-modal {
+      position: fixed;
+      z-index: 1000;
+      inset: 0;
+    }
+
+    .store-modal__backdrop {
+      position: absolute;
+      inset: 0;
+      background: rgba(5,5,5,.42);
+      backdrop-filter: blur(10px);
+    }
+
+    .store-modal__card {
+      position: relative;
+      z-index: 1;
+      top: 50%;
+      left: 50%;
+      width: min(91vw,480px);
+      padding: 46px 34px 36px;
+      border: 1px solid rgba(0,0,0,.06);
+      border-radius: 30px;
+      background: rgba(255,255,255,.97);
+      box-shadow: 0 28px 80px rgba(0,0,0,.25);
+      transform: translate(-50%,-50%);
+      text-align: center;
+    }
+
+    .store-modal__close {
+      position: absolute;
+      top: 17px;
+      right: 17px;
+      display: grid;
+      place-items: center;
+      width: 34px;
+      height: 34px;
+      border: 0;
+      border-radius: 50%;
+      background: #f1f1f1;
+      color: #050505;
+      font-size: 24px;
+      cursor: pointer;
+    }
+
+    .store-modal__logo {
+      display: block;
+      width: 120px;
+      height: 120px;
+      margin: 0 auto 24px;
+      object-fit: contain;
+      filter: drop-shadow(0 14px 12px rgba(0,0,0,.22));
+    }
+
+    .store-modal__kicker {
+      margin: 0 0 10px;
+      color: #35bccc;
+      font: 500 11px 'DM Mono', monospace;
+      letter-spacing: .14em;
+    }
+
+    .store-modal h2 {
+      margin: 0;
+      color: #050505;
+      font-size: clamp(28px,6vw,38px);
+      font-weight: 700;
+      letter-spacing: -.055em;
+      line-height: 1.04;
+    }
+
+    .store-modal__text {
+      margin: 16px 0 25px;
+      color: #555;
+      font-size: 16px;
+      line-height: 1.55;
+    }
+
+    /* Keine automatisch erzeugten Trenner bei DE / EN */
+    .language-switch::before,
+    .language-switch::after,
+    .language-switch *::before,
+    .language-switch *::after {
+      content: none !important;
+      display: none !important;
+    }
+
+    @media (max-width: 600px) {
+      .homepage-main {
+        padding-top: 4px;
+      }
+
+      .homepage-section {
+        min-height: calc(100vh - 170px);
+      }
+
+      .site-header .header-inner,
+      .site-footer .footer-inner {
+        width: min(100% - 32px, 1120px);
+      }
+
+      .brand-logo img {
+        width: 27px;
+        height: 27px;
+      }
+
+      .footer-top {
+        gap: 12px;
+      }
+
+      .site-footer .footer-inner {
+        gap: 18px;
+      }
+
+      .store-modal__card {
+        padding: 42px 24px 30px;
+        border-radius: 26px;
+      }
+
+      .store-modal__logo {
+        width: 105px;
+        height: 105px;
+        margin-bottom: 20px;
+      }
+    }
+  </style>
 </head>
 
 <body>
-  <div class="page">
+  <div class="site">
 
-   <header class="site-header">
-  <a class="brand" href="index.html" aria-label="Next Round – Startseite">
-    <img
-      class="brand-logo"
-      src="C109D335-EFBE-4BED-9522-CA814AA267DD.png"
-      alt=""
-      aria-hidden="true"
-    >
-    <span>Next Round</span>
-  </a>
-</header>
+    <header class="site-header">
+      <div class="header-inner">
+        <a href="index.html" class="brand" aria-label="Next Round Startseite">
+          <span class="brand-logo">
+            <img
+              src="C109D335-EFBE-4BED-9522-CA814AA267DD.png"
+              alt="Next Round Logo"
+            >
+          </span>
 
-    <main>
-      <section class="hero-3d" aria-label="Rotierendes Next Round N-Logo">
-        <div id="logo3d"></div>
-      </section>
-
-      <p class="claim">
-        <span class="claim-main">
-          NextRound. Die Multiplayer-Party-App.
-        </span>
-
-        <span class="claim-sub">
-          Jeder am eigenen Handy. Alle im selben Spiel.
-        </span>
-      </p>
-
-      <div class="icon-row" aria-label="Next Round Links">
-
-        <a
-          class="icon-button"
-          href="https://www.instagram.com/nt_j0urney?igsh=Z3h2dmNkZ2piNjZh"
-          target="_blank"
-          rel="noopener"
-          aria-label="Instagram"
-        >
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7Zm5 2.7A5.3 5.3 0 1 1 6.7 12 5.3 5.3 0 0 1 12 6.7Zm0 2A3.3 3.3 0 1 0 15.3 12 3.3 3.3 0 0 0 12 8.7ZM18 5.5a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5Z"/>
-          </svg>
+          <span class="brand-text">
+            <span class="brand-name">Next Round</span>
+          </span>
         </a>
-
-        <a
-          class="icon-button"
-          href="https://www.tiktok.com/@nt_journey?_r=1&_t=ZG-98kAqMVzl0T"
-          target="_blank"
-          rel="noopener"
-          aria-label="TikTok"
-        >
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M15.8 2c.4 2.7 1.9 4.4 4.2 4.6v3.1c-1.5.1-2.8-.4-4.1-1.2v6.2c0 5-5.5 6.5-8.3 4.1-1.8-1.5-2-5.1-.4-6.8 1.1-1.2 2.6-1.7 4.4-1.4v3.1c-.8-.3-1.7.1-2 .7-.4.9.1 1.9 1 2.1 1.3.4 2.4-.6 2.4-1.9V2h2.8Z"/>
-          </svg>
-        </a>
-
-        <button
-          class="icon-button"
-          type="button"
-          data-store-modal
-          aria-label="App Store"
-        >
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M17.1 12.7c0-2.2 1.8-3.2 1.9-3.3-1-1.5-2.6-1.7-3.2-1.7-1.4-.1-2.7.8-3.4.8-.7 0-1.7-.8-2.8-.8-1.5 0-2.8.9-3.5 2.2-1.5 2.6-.4 6.4 1 8.4.7 1 1.5 2.1 2.6 2.1 1 0 1.4-.7 2.7-.7 1.2 0 1.6.7 2.7.7 1.1 0 1.8-1 2.5-2 .8-1.1 1.1-2.2 1.1-2.3-.1 0-2.1-.8-2.1-3.4ZM14.9 6.3c.6-.8 1-1.8.9-2.9-.9 0-2 .6-2.6 1.4-.6.7-1.1 1.8-1 2.8 1 .1 2-.5 2.7-1.3Z"/>
-          </svg>
-        </button>
-
-        <button
-          class="icon-button"
-          type="button"
-          data-store-modal
-          aria-label="Google Play"
-        >
-          <svg class="play" viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M3.5 2.4 13.9 12 3.5 21.6c-.3-.4-.5-.9-.5-1.5V3.9c0-.6.2-1.1.5-1.5Zm11.9 11 2.5-2.3c.8.4 2.2 1.2 2.8 1.5.5.3.5.8 0 1.1l-2.8 1.5-2.5-2.4Zm-1.8.2-8.8 8.1c.4.2.9.2 1.4-.1l9.4-5.2-2-2.8Zm0-3.2 2-2.8-9.4-5.2c-.5-.3-1-.3-1.4-.1l8.8 8.1Z"/>
-          </svg>
-        </button>
-
-        <a
-          class="icon-button"
-          href="https://next-round-f1d727ea.base44.app/"
-          target="_blank"
-          rel="noopener"
-          aria-label="NextRound Web-App öffnen"
-        >
-          <img
-            src="C109D335-EFBE-4BED-9522-CA814AA267DD.png"
-            alt=""
-            aria-hidden="true"
-            style="width:28px;height:28px;object-fit:contain"
-          >
-        </a>
-
       </div>
+    </header>
+
+    <main class="site-main homepage-main">
+      <section class="section homepage-section">
+
+        <section class="hero-3d" aria-label="Rotierendes Next Round N-Logo">
+          <div id="logo3d"></div>
+        </section>
+
+        <p class="claim">
+          <span class="claim-main">
+            NextRound. Die Multiplayer-Party-App.
+          </span>
+
+          <span class="claim-sub">
+            Jeder am eigenen Handy. Alle im selben Spiel.
+          </span>
+        </p>
+
+        <div class="icon-row" aria-label="Next Round Links">
+
+          <a
+            class="icon-button"
+            href="https://www.instagram.com/nt_j0urney?igsh=Z3h2dmNkZ2piNjZh"
+            target="_blank"
+            rel="noopener"
+            aria-label="Instagram"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7Zm5 2.7A5.3 5.3 0 1 1 6.7 12 5.3 5.3 0 0 1 12 6.7Zm0 2A3.3 3.3 0 1 0 15.3 12 3.3 3.3 0 0 0 12 8.7ZM18 5.5a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5Z"/>
+            </svg>
+          </a>
+
+          <a
+            class="icon-button"
+            href="https://www.tiktok.com/@nt_journey?_r=1&_t=ZG-98kAqMVzl0T"
+            target="_blank"
+            rel="noopener"
+            aria-label="TikTok"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M15.8 2c.4 2.7 1.9 4.4 4.2 4.6v3.1c-1.5.1-2.8-.4-4.1-1.2v6.2c0 5-5.5 6.5-8.3 4.1-1.8-1.5-2-5.1-.4-6.8 1.1-1.2 2.6-1.7 4.4-1.4v3.1c-.8-.3-1.7.1-2 .7-.4.9.1 1.9 1 2.1 1.3.4 2.4-.6 2.4-1.9V2h2.8Z"/>
+            </svg>
+          </a>
+
+          <button
+            class="icon-button"
+            type="button"
+            data-store-modal
+            aria-label="App Store"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M17.1 12.7c0-2.2 1.8-3.2 1.9-3.3-1-1.5-2.6-1.7-3.2-1.7-1.4-.1-2.7.8-3.4.8-.7 0-1.7-.8-2.8-.8-1.5 0-2.8.9-3.5 2.2-1.5 2.6-.4 6.4 1 8.4.7 1 1.5 2.1 2.6 2.1 1 0 1.4-.7 2.7-.7 1.2 0 1.6.7 2.7.7 1.1 0 1.8-1 2.5-2 .8-1.1 1.1-2.2 1.1-2.3-.1 0-2.1-.8-2.1-3.4ZM14.9 6.3c.6-.8 1-1.8.9-2.9-.9 0-2 .6-2.6 1.4-.6.7-1.1 1.8-1 2.8 1 .1 2-.5 2.7-1.3Z"/>
+            </svg>
+          </button>
+
+          <button
+            class="icon-button"
+            type="button"
+            data-store-modal
+            aria-label="Google Play"
+          >
+            <svg class="play" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M3.5 2.4 13.9 12 3.5 21.6c-.3-.4-.5-.9-.5-1.5V3.9c0-.6.2-1.1.5-1.5Zm11.9 11 2.5-2.3c.8.4 2.2 1.2 2.8 1.5.5.3.5.8 0 1.1l-2.8 1.5-2.5-2.4Zm-1.8.2-8.8 8.1c.4.2.9.2 1.4-.1l9.4-5.2-2-2.8Zm0-3.2 2-2.8-9.4-5.2c-.5-.3-1-.3-1.4-.1l8.8 8.1Z"/>
+            </svg>
+          </button>
+
+          <a
+            class="icon-button"
+            href="https://next-round-f1d727ea.base44.app/"
+            target="_blank"
+            rel="noopener"
+            aria-label="NextRound Web-App öffnen"
+          >
+            <img
+              src="C109D335-EFBE-4BED-9522-CA814AA267DD.png"
+              alt=""
+              aria-hidden="true"
+              style="width:28px;height:28px;object-fit:contain"
+            >
+          </a>
+
+        </div>
+      </section>
     </main>
 
     <footer class="site-footer">
@@ -414,7 +436,6 @@
     <div class="store-modal__backdrop" data-close-modal></div>
 
     <section class="store-modal__card">
-
       <button
         class="store-modal__close"
         type="button"
@@ -440,7 +461,6 @@
         Wir arbeiten mit Hochdruck daran.<br>
         Sei gespannt!
       </p>
-
     </section>
   </div>
 
@@ -461,7 +481,7 @@
       document.body.style.overflow = "";
     };
 
-     document
+    document
       .querySelectorAll("[data-store-modal]")
       .forEach((button) => {
         button.addEventListener("click", openStoreModal);
