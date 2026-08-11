@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+
+  <title>Legal – NextRound</title>
+  <meta
+    name="description"
+    content="Rechtliche Informationen zu NextRound."
+  >
+
+  <link rel="stylesheet" href="home.css">
+
+  <style>
+    .legal-main {
+      width: min(100%, 820px);
+      padding-top: 28px;
+      padding-bottom: 52px;
+    }
+
+    .legal-heading {
+      max-width: 580px;
+      margin: 0 auto 32px;
+      text-align: center;
+    }
+
+    .legal-kicker {
+      margin: 0 0 10px;
+      color: #35bccc;
+      font: 500 11px 'DM Mono', monospace;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+
+    .legal-heading h1 {
+      margin: 0;
+      color: #050505;
+      font-size: clamp(2.3rem, 6vw, 4rem);
+      font-weight: 700;
+      letter-spacing: -.065em;
+      line-height: 1;
+    }
+
+    .legal-heading p {
+      margin: 14px auto 0;
+      color: rgba(5, 5, 5, .62);
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    .legal-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      width: 100%;
+    }
+
+    .legal-card {
+      display: flex;
+      min-height: 142px;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      background: #fff;
+      color: var(--black);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, .07);
+      text-align: left;
+      text-decoration: none;
+      transition: transform .18s ease, box-shadow .18s ease;
+    }
+
+    .legal-card:hover {
+      box-shadow: 0 10px 22px rgba(0, 0, 0, .12);
+      transform: translateY(-3px);
+    }
+
+    .legal-card__number {
+      color: #35bccc;
+      font: 500 11px 'DM Mono', monospace;
+      letter-spacing: .12em;
+    }
+
+    .legal-card__title {
+      margin: 22px 0 0;
+      font-size: clamp(1.15rem, 2vw, 1.45rem);
+      font-weight: 700;
+      letter-spacing: -.045em;
+      line-height: 1.1;
+    }
+
+    .legal-card__arrow {
+      align-self: flex-end;
+      margin-top: 12px;
+      color: rgba(5, 5, 5, .58);
+      font-size: 21px;
+      line-height: 1;
+      transition: transform .18s ease;
+    }
+
+    .legal-card:hover .legal-card__arrow {
+      transform: translateX(4px);
+    }
+
+    .legal-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 22px;
+      color: rgba(5, 5, 5, .64);
+      font: 500 11px 'DM Mono', monospace;
+      letter-spacing: .04em;
+      text-decoration: none;
+    }
+
+    .legal-back:hover {
+      color: var(--black);
+      text-decoration: underline;
+    }
+
+    .language-links {
+      display: flex;
+      gap: 12px;
+    }
+
+    .language-links a {
+      color: var(--black);
+      text-decoration: none;
+    }
+
+    .language-links a:hover {
+      text-decoration: underline;
+    }
+
+    .language-links .is-active {
+      color: rgba(5, 5, 5, .45);
+      pointer-events: none;
+    }
+
+    @media (max-width: 600px) {
+      .legal-main {
+        padding-top: 18px;
+        padding-bottom: 64px;
+      }
+
+      .legal-heading {
+        margin-bottom: 26px;
+      }
+
+      .legal-grid {
+        grid-template-columns: 1fr;
+        gap: 11px;
+      }
+
+      .legal-card {
+        min-height: 118px;
+        padding: 19px;
+        border-radius: 19px;
+      }
+
+      .legal-card__title {
+        margin-top: 16px;
+      }
+
+      .site-footer {
+        flex-direction: row;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="page">
+
+    <header class="site-header">
+      <a
+        class="brand"
+        href="index.html"
+        aria-label="Zur Startseite von NextRound"
+      >
+        Next Round
+      </a>
+    </header>
+
+    <main class="legal-main">
+      <section class="legal-heading">
+        <p class="legal-kicker">NextRound</p>
+
+        <h1>Legal</h1>
+
+        <p>
+          Rechtliche Informationen, Datenschutz und Hinweise
+          zur Nutzung von NextRound.
+        </p>
+      </section>
+
+      <nav class="legal-grid" aria-label="Rechtliche Informationen">
+
+        <a class="legal-card" href="impressum.html">
+          <span class="legal-card__number">01</span>
+          <span class="legal-card__title">Impressum</span>
+          <span class="legal-card__arrow" aria-hidden="true">→</span>
+        </a>
+
+        <a class="legal-card" href="datenschutz.html">
+          <span class="legal-card__number">02</span>
+          <span class="legal-card__title">Datenschutz<wbr>erklärung</span>
+          <span class="legal-card__arrow" aria-hidden="true">→</span>
+        </a>
+
+        <a class="legal-card" href="agb.html">
+          <span class="legal-card__number">03</span>
+          <span class="legal-card__title">AGB</span>
+          <span class="legal-card__arrow" aria-hidden="true">→</span>
+        </a>
+
+        <a class="legal-card" href="nutzungsbedingungen.html">
+          <span class="legal-card__number">04</span>
+          <span class="legal-card__title">Nutzungs<wbr>bedingungen</span>
+          <span class="legal-card__arrow" aria-hidden="true">→</span>
+        </a>
+
+        <a class="legal-card" href="datenloeschung.html">
+          <span class="legal-card__number">05</span>
+          <span class="legal-card__title">Konto und Daten löschen</span>
+          <span class="legal-card__arrow" aria-hidden="true">→</span>
+        </a>
+
+      </nav>
+
+      <a class="legal-back" href="index.html">
+        ← Zurück zur Startseite
+      </a>
+    </main>
+
+    <footer class="site-footer">
+      <span>© <span id="year"></span> Next Round</span>
+
+      <nav class="language-links" aria-label="Sprache">
+        <a class="is-active" href="legal.html" lang="de">Deutsch</a>
+        <a href="en/legal.html" lang="en">English</a>
+      </nav>
+    </footer>
+
+  </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
