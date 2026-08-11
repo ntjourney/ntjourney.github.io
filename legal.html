@@ -70,26 +70,39 @@
     }
 
     .language-switch {
-      display: flex;
-      gap: 10px;
-      font: 500 11px 'DM Mono', monospace;
-      letter-spacing: .04em;
-      text-transform: uppercase;
-    }
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font: 500 11px 'DM Mono', monospace;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}
 
-    .language-switch a {
-      color: #050505;
-      text-decoration: none;
-    }
+.language-switch a {
+  text-decoration: none;
+}
 
-    .language-switch a:hover {
-      text-decoration: underline;
-    }
+.language-switch .is-active {
+  color: #050505;
+  font-weight: 700;
+  pointer-events: none;
+  text-decoration: none;
+}
 
-    .language-switch .is-active {
-      color: rgba(5, 5, 5, .42);
-      pointer-events: none;
-    }
+.language-switch .language-separator {
+  color: #050505;
+  font-weight: 700;
+}
+
+.language-switch a:not(.is-active) {
+  color: rgba(5, 5, 5, .52);
+  text-decoration: none;
+}
+
+.language-switch a:not(.is-active):hover {
+  color: #050505;
+  text-decoration: underline;
+}
 
     @media (max-width: 640px) {
       .legal-hub-grid {
