@@ -32,232 +32,273 @@
   <link rel="stylesheet" href="home.css">
 
   <style>
-    .claim {
-      line-height: 1.1;
-    }
+  .claim {
+    line-height: 1.1;
+  }
 
-    .claim-main,
-    .claim-sub {
-      display: block;
-    }
+  .claim-main,
+  .claim-sub {
+    display: block;
+  }
 
-    .claim-main {
-      font-size: clamp(1.55rem, 3.2vw, 2.55rem);
-      font-weight: 700;
-      letter-spacing: -.045em;
-    }
+  .claim-main {
+    font-size: clamp(1.55rem, 3.2vw, 2.55rem);
+    font-weight: 700;
+    letter-spacing: -.045em;
+  }
 
-    .claim-sub {
-      margin-top: .55rem;
-      font-size: clamp(.95rem, 1.45vw, 1.15rem);
-      font-weight: 500;
-      letter-spacing: -.015em;
-      opacity: .68;
-    }
+  .claim-sub {
+    margin-top: .55rem;
+    font-size: clamp(.95rem, 1.45vw, 1.15rem);
+    font-weight: 500;
+    letter-spacing: -.015em;
+    opacity: .68;
+  }
 
-    .store-modal[hidden] {
-      display: none;
-    }
+  .store-modal[hidden] {
+    display: none;
+  }
 
-    .store-modal {
-      position: fixed;
-      z-index: 1000;
-      inset: 0;
-    }
+  .store-modal {
+    position: fixed;
+    z-index: 1000;
+    inset: 0;
+  }
 
-    .store-modal__backdrop {
-      position: absolute;
-      inset: 0;
-      background: rgba(5, 5, 5, .42);
-      backdrop-filter: blur(10px);
-    }
+  .store-modal__backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(5, 5, 5, .42);
+    backdrop-filter: blur(10px);
+  }
 
+  .store-modal__card {
+    position: relative;
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    width: min(91vw, 480px);
+    padding: 46px 34px 36px;
+    border: 1px solid rgba(0, 0, 0, .06);
+    border-radius: 30px;
+    background: rgba(255, 255, 255, .97);
+    box-shadow: 0 28px 80px rgba(0, 0, 0, .25);
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+
+  .store-modal__close {
+    position: absolute;
+    top: 17px;
+    right: 17px;
+    display: grid;
+    place-items: center;
+    width: 34px;
+    height: 34px;
+    border: 0;
+    border-radius: 50%;
+    background: #f1f1f1;
+    color: #050505;
+    font-size: 24px;
+    line-height: 1;
+    cursor: pointer;
+    transition: transform .18s, background .18s;
+  }
+
+  .store-modal__close:hover {
+    background: #e7e7e7;
+    transform: scale(1.06);
+  }
+
+  .store-modal__logo {
+    display: block;
+    width: 120px;
+    height: 120px;
+    margin: 0 auto 24px;
+    object-fit: contain;
+    filter: drop-shadow(0 14px 12px rgba(0, 0, 0, .22));
+  }
+
+  .store-modal__kicker {
+    margin: 0 0 10px;
+    color: #35bccc;
+    font: 500 11px 'DM Mono', monospace;
+    letter-spacing: .14em;
+  }
+
+  .store-modal h2 {
+    margin: 0;
+    color: #050505;
+    font-size: clamp(28px, 6vw, 38px);
+    font-weight: 700;
+    letter-spacing: -.055em;
+    line-height: 1.04;
+  }
+
+  .store-modal__text {
+    margin: 16px 0 25px;
+    color: #555;
+    font-size: 16px;
+    line-height: 1.55;
+  }
+
+  /* Footer-Aufbau */
+  .site-footer .footer-inner {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .site-footer .footer-top {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+  }
+
+  .site-footer .footer-links {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  /* Legal-Link */
+  .footer-links a {
+    text-decoration: none;
+    transition: color .18s ease;
+  }
+
+  .footer-links a:hover {
+    color: #168e99;
+    text-decoration: underline;
+    text-decoration-color: var(--cyan);
+  }
+
+  /* Sprachumschaltung */
+  .language-switch {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #050505;
+    font: 500 11px 'DM Mono', monospace;
+    letter-spacing: .04em;
+    text-transform: uppercase;
+  }
+
+  /* DE: aktiv, schwarz und fett */
+  .language-switch .language-active,
+  .language-switch .language-separator {
+    color: #050505 !important;
+    font-weight: 700 !important;
+  }
+
+  /* EN: inaktiv, heller und normal dick */
+  .language-switch a {
+    color: #777777 !important;
+    font-weight: 400 !important;
+    text-decoration: none;
+    transition: color .18s ease;
+  }
+
+  .language-switch a:hover {
+    color: #168e99 !important;
+    text-decoration: underline;
+    text-decoration-color: var(--cyan);
+  }
+
+  @media (max-width: 600px) {
     .store-modal__card {
-      position: relative;
-      z-index: 1;
-      top: 50%;
-      left: 50%;
-      width: min(91vw, 480px);
-      padding: 46px 34px 36px;
-      border: 1px solid rgba(0, 0, 0, .06);
-      border-radius: 30px;
-      background: rgba(255, 255, 255, .97);
-      box-shadow: 0 28px 80px rgba(0, 0, 0, .25);
-      transform: translate(-50%, -50%);
-      text-align: center;
-    }
-
-    .store-modal__close {
-      position: absolute;
-      top: 17px;
-      right: 17px;
-      display: grid;
-      place-items: center;
-      width: 34px;
-      height: 34px;
-      border: 0;
-      border-radius: 50%;
-      background: #f1f1f1;
-      color: #050505;
-      font-size: 24px;
-      line-height: 1;
-      cursor: pointer;
-      transition: transform .18s, background .18s;
-    }
-
-    .store-modal__close:hover {
-      background: #e7e7e7;
-      transform: scale(1.06);
+      padding: 42px 24px 30px;
+      border-radius: 26px;
     }
 
     .store-modal__logo {
-      display: block;
-      width: 120px;
-      height: 120px;
-      margin: 0 auto 24px;
-      object-fit: contain;
-      filter: drop-shadow(0 14px 12px rgba(0, 0, 0, .22));
+      width: 105px;
+      height: 105px;
+      margin-bottom: 20px;
     }
 
-    .store-modal__kicker {
-      margin: 0 0 10px;
-      color: #35bccc;
-      font: 500 11px 'DM Mono', monospace;
-      letter-spacing: .14em;
+    .site-footer {
+      margin-top: 34px;
+      padding-top: 28px;
+      padding-bottom: 38px;
     }
 
-    .store-modal h2 {
-      margin: 0;
-      color: #050505;
-      font-size: clamp(28px, 6vw, 38px);
-      font-weight: 700;
-      letter-spacing: -.055em;
-      line-height: 1.04;
-    }
-
-    .store-modal__text {
-      margin: 16px 0 25px;
-      color: #555;
-      font-size: 16px;
-      line-height: 1.55;
-    }
-
-    /* Footer-Aufbau */
     .site-footer .footer-inner {
-      display: flex;
       width: 100%;
-      flex-direction: column;
-      gap: 14px;
-    }
-
-    .site-footer .footer-top {
-      display: flex;
-      width: 100%;
-      align-items: center;
-      justify-content: space-between;
       gap: 18px;
     }
 
+    .site-footer .footer-top {
+      align-items: center;
+      justify-content: space-between;
+    }
+
     .site-footer .footer-links {
-      display: flex;
-      align-items: center;
-      gap: 16px;
+      gap: 12px;
     }
 
-    /* Legal-Link */
-    .footer-links a {
-      text-decoration: none;
-      transition: color .18s ease;
+    .site-header .brand-logo {
+      width: 27px;
+      height: 27px;
     }
 
-    .footer-links a:hover {
-      color: #168e99;
-      text-decoration: underline;
-      text-decoration-color: var(--cyan);
+    .site-header .brand {
+      font-size: 15px;
     }
+  }
 
-    /* Sprachumschaltung */
-    .language-switch {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      color: #050505;
-      font: 500 11px 'DM Mono', monospace;
-      letter-spacing: .04em;
-      text-transform: uppercase;
-    }
+  /* Marken-Header: Logo + Next Round */
+  .site-header {
+    display: flex;
+    align-items: center;
+    padding: 22px 0;
+  }
 
-    /* DE: aktiv, schwarz und fett */
-    .language-switch .language-active,
-    .language-switch .language-separator {
-      color: #050505 !important;
-      font-weight: 700 !important;
-    }
+  .site-header .brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: #050505;
+    font: 700 16px 'Space Grotesk', Arial, sans-serif;
+    letter-spacing: -.04em;
+    text-decoration: none;
+  }
 
-    /* EN: inaktiv, heller und normal dick */
-    .language-switch a {
-      color: #777777 !important;
-      font-weight: 400 !important;
-      text-decoration: none;
-      transition: color .18s ease;
-    }
+  .site-header .brand-logo {
+    display: block;
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+  }
 
-    .language-switch a:hover {
-      color: #168e99 !important;
-      text-decoration: underline;
-      text-decoration-color: var(--cyan);
-    }
-
-    @media (max-width: 600px) {
-      .store-modal__card {
-        padding: 42px 24px 30px;
-        border-radius: 26px;
-      }
-
-      .store-modal__logo {
-        width: 105px;
-        height: 105px;
-        margin-bottom: 20px;
-      }
-
-      .site-footer {
-        margin-top: 34px;
-        padding-top: 28px;
-        padding-bottom: 38px;
-      }
-
-      .site-footer .footer-inner {
-        width: 100%;
-        gap: 18px;
-      }
-
-      .site-footer .footer-top {
-        align-items: center;
-        justify-content: space-between;
-      }
-
-      .site-footer .footer-links {
-        gap: 12px;
-      }
-    }
-
-    /* Entfernt automatisch generierte Pseudoelemente */
-    .language-switch::before,
-    .language-switch::after,
-    .language-switch *::before,
-    .language-switch *::after {
-      content: none !important;
-      display: none !important;
-    }
-  </style>
+  /* Entfernt automatisch generierte Pseudoelemente */
+  .language-switch::before,
+  .language-switch::after,
+  .language-switch *::before,
+  .language-switch *::after {
+    content: none !important;
+    display: none !important;
+  }
+</style>
 </head>
 
 <body>
   <div class="page">
 
-    <header class="site-header">
-      <div class="brand">Next Round</div>
-    </header>
+   <header class="site-header">
+  <a class="brand" href="index.html" aria-label="Next Round – Startseite">
+    <img
+      class="brand-logo"
+      src="C109D335-EFBE-4BED-9522-CA814AA267DD.png"
+      alt=""
+      aria-hidden="true"
+    >
+    <span>Next Round</span>
+  </a>
+</header>
 
     <main>
       <section class="hero-3d" aria-label="Rotierendes Next Round N-Logo">
