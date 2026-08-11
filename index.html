@@ -157,15 +157,31 @@
       gap: 16px;
     }
 
-    .site-footer .footer-links a {
-      color: #050505;
-      font: 11px 'DM Mono', monospace;
-      text-decoration: none;
-    }
+  .site-footer .footer-links a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 30px;
+  padding: 0 11px;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  color: #050505;
+  font: 500 11px 'DM Mono', monospace;
+  letter-spacing: .04em;
+  text-decoration: none;
+  transition:
+    color .18s ease,
+    background .18s ease,
+    border-color .18s ease,
+    transform .18s ease;
+}
 
-    .site-footer .footer-links a:hover {
-      text-decoration: underline;
-    }
+.site-footer .footer-links a:hover {
+  border-color: rgba(53, 188, 204, .32);
+  background: rgba(102, 220, 232, .18);
+  color: #168e99;
+  text-decoration: none;
+  transform: translateY(-1px);
+}
 
     @media (max-width: 600px) {
       .store-modal__card {
