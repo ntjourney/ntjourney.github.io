@@ -89,20 +89,24 @@ a {
 }
 
 .brand-logo {
-  display: block;
+  display: grid;
   width: 44px;
   height: 44px;
+  place-items: center;
   overflow: hidden;
   border: 0;
   border-radius: 13px;
-  background: url("C109D335-EFBE-4BED-9522-CA814AA267DD.png") center / contain no-repeat;
+  background: transparent;
   box-shadow: 0 8px 18px rgba(8, 25, 29, .16);
   font-size: 0;
 }
 
 
 .brand-logo img {
-  display: none;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 .brand-text {
