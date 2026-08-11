@@ -142,8 +142,15 @@
       line-height: 1.55;
     }
 
-    /* Footer-Struktur und Legal-Link wie auf den Rechtstext-Seiten */
+    /* Footer-Aufbau */
     .site-footer .footer-inner {
+      display: flex;
+      width: 100%;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .site-footer .footer-top {
       display: flex;
       width: 100%;
       align-items: center;
@@ -157,16 +164,46 @@
       gap: 16px;
     }
 
-  .footer-links a {
-  text-decoration: none;
-  transition: color .18s ease;
-}
+    /* Legal-Link wie im Impressum */
+    .footer-links a {
+      text-decoration: none;
+      transition: color .18s ease;
+    }
 
-.footer-links a:hover {
-  color: #168e99;
-  text-decoration: underline;
-  text-decoration-color: var(--cyan);
-}
+    .footer-links a:hover {
+      color: #168e99;
+      text-decoration: underline;
+      text-decoration-color: var(--cyan);
+    }
+
+    /* Sprachumschaltung */
+    .language-switch {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: #050505;
+      font: 500 11px 'DM Mono', monospace;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+    }
+
+    .language-active,
+    .language-separator {
+      color: #050505;
+      font-weight: 700;
+    }
+
+    .language-switch a {
+      color: rgba(5, 5, 5, .52);
+      text-decoration: none;
+      transition: color .18s ease;
+    }
+
+    .language-switch a:hover {
+      color: #168e99;
+      text-decoration: underline;
+      text-decoration-color: var(--cyan);
+    }
 
     @media (max-width: 600px) {
       .store-modal__card {
@@ -180,10 +217,20 @@
         margin-bottom: 20px;
       }
 
+      .site-footer {
+        margin-top: 34px;
+        padding-top: 28px;
+        padding-bottom: 38px;
+      }
+
       .site-footer .footer-inner {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 12px;
+        width: 100%;
+        gap: 18px;
+      }
+
+      .site-footer .footer-top {
+        align-items: center;
+        justify-content: space-between;
       }
 
       .site-footer .footer-links {
@@ -283,11 +330,21 @@
 
     <footer class="site-footer">
       <div class="footer-inner">
-        <div>© <span id="year"></span> Next Round</div>
+
+        <div class="footer-top">
+          <div>© <span id="year"></span> Next Round</div>
+
+          <div class="language-switch" aria-label="Sprache">
+            <span class="language-active">DE</span>
+            <span class="language-separator" aria-hidden="true">/</span>
+            <a href="en/index.html" lang="en">EN</a>
+          </div>
+        </div>
 
         <nav class="footer-links" aria-label="Rechtliches">
           <a href="legal.html">Legal</a>
         </nav>
+
       </div>
     </footer>
 
