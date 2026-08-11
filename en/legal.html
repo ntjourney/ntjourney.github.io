@@ -1,1 +1,237 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex,follow" />
+  <meta name="theme-color" content="#ffffff" />
 
+  <title>Legal – Next Round</title>
+  <meta
+    name="description"
+    content="Legal information about NextRound."
+  />
+
+  <link rel="stylesheet" href="styles.css" />
+
+  <style>
+    .legal-hub-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 34px;
+    }
+
+    .legal-hub-card {
+      display: flex;
+      min-height: 146px;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 22px;
+      border: 1px solid rgba(5, 5, 5, .12);
+      border-radius: 22px;
+      background: #fff;
+      color: #050505;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, .07);
+      text-decoration: none;
+      transition: transform .18s ease, box-shadow .18s ease;
+    }
+
+    .legal-hub-card:hover {
+      box-shadow: 0 10px 22px rgba(0, 0, 0, .12);
+      transform: translateY(-3px);
+    }
+
+    .legal-hub-number {
+      color: #35bccc;
+      font: 500 11px 'DM Mono', monospace;
+      letter-spacing: .12em;
+    }
+
+    .legal-hub-title {
+      margin-top: 22px;
+      font-size: clamp(1.15rem, 2vw, 1.45rem);
+      font-weight: 700;
+      letter-spacing: -.045em;
+      line-height: 1.1;
+    }
+
+    .legal-hub-arrow {
+      align-self: flex-end;
+      margin-top: 12px;
+      color: rgba(5, 5, 5, .58);
+      font-size: 21px;
+      line-height: 1;
+      transition: transform .18s ease;
+    }
+
+    .legal-hub-card:hover .legal-hub-arrow {
+      transform: translateX(4px);
+    }
+
+    .language-switch {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font: 500 11px 'DM Mono', monospace;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+    }
+
+    .language-switch a {
+      text-decoration: none;
+    }
+
+    .language-switch .is-active {
+      color: #050505;
+      font-weight: 700;
+      pointer-events: none;
+      text-decoration: none;
+    }
+
+    .language-switch .language-separator {
+      color: #050505;
+      font-weight: 700;
+    }
+
+    .language-switch a:not(.is-active) {
+      color: rgba(5, 5, 5, .52);
+      text-decoration: none;
+    }
+
+    .language-switch a:not(.is-active):hover {
+      color: #050505;
+      text-decoration: underline;
+    }
+
+    @media (max-width: 640px) {
+      .legal-hub-grid {
+        grid-template-columns: 1fr;
+        gap: 11px;
+        margin-top: 28px;
+      }
+
+      .legal-hub-card {
+        min-height: 118px;
+        padding: 19px;
+        border-radius: 19px;
+      }
+
+      .legal-hub-title {
+        margin-top: 16px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="site">
+
+    <header class="site-header">
+      <div class="header-inner">
+
+        <a
+          href="index.html"
+          class="brand"
+          aria-label="NextRound homepage"
+        >
+          <span class="brand-logo">
+            <img
+              src="C109D335-EFBE-4BED-9522-CA814AA267DD.png"
+              alt="NextRound Logo"
+            />
+          </span>
+
+          <span class="brand-text">
+            <span class="brand-name">Next Round</span>
+          </span>
+        </a>
+
+        <a href="index.html" class="header-link">
+          ← Back to homepage
+        </a>
+
+      </div>
+    </header>
+
+    <main class="site-main">
+      <section class="section">
+
+        <header class="legal-page-header">
+          <div class="legal-kicker">Legal</div>
+
+          <h1 class="legal-title">Legal information</h1>
+
+          <p class="legal-intro">
+            Legal information, privacy information and guidance
+            on using NextRound.
+          </p>
+        </header>
+
+        <nav
+          class="legal-hub-grid"
+          aria-label="Legal information"
+        >
+          <a class="legal-hub-card" href="legal-notice.html">
+            <span class="legal-hub-number">01</span>
+            <span class="legal-hub-title">Legal Notice</span>
+            <span class="legal-hub-arrow" aria-hidden="true">→</span>
+          </a>
+
+          <a class="legal-hub-card" href="privacy-policy.html">
+            <span class="legal-hub-number">02</span>
+            <span class="legal-hub-title">
+              Privacy<wbr> Policy
+            </span>
+            <span class="legal-hub-arrow" aria-hidden="true">→</span>
+          </a>
+
+          <a class="legal-hub-card" href="terms-and-conditions.html">
+            <span class="legal-hub-number">03</span>
+            <span class="legal-hub-title">Terms and Conditions</span>
+            <span class="legal-hub-arrow" aria-hidden="true">→</span>
+          </a>
+
+          <a class="legal-hub-card" href="terms-of-use.html">
+            <span class="legal-hub-number">04</span>
+            <span class="legal-hub-title">
+              Terms of<wbr> Use
+            </span>
+            <span class="legal-hub-arrow" aria-hidden="true">→</span>
+          </a>
+
+          <a class="legal-hub-card" href="data-deletion.html">
+            <span class="legal-hub-number">05</span>
+            <span class="legal-hub-title">
+              Delete Account and Data
+            </span>
+            <span class="legal-hub-arrow" aria-hidden="true">→</span>
+          </a>
+        </nav>
+
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+
+        <div>
+          © <span id="year"></span> Next Round
+        </div>
+
+        <div class="language-switch" aria-label="Language">
+          <a href="../legal.html" lang="de">DE</a>
+          <span aria-hidden="true">/</span>
+          <a class="is-active" href="legal.html" lang="en">EN</a>
+        </div>
+
+      </div>
+    </footer>
+
+  </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
