@@ -1,83 +1,24 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+/* home.css
+   Nur Startseiten-spezifische Elemente.
+   Hintergrund, Header und Footer kommen aus styles.css. */
 
-:root {
-  --cyan: #66dce8;
-  --black: #050505;
-  --line: #e7e7e7;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-html,
-body {
-  min-height: 100%;
-  margin: 0;
-  background: #fff;
-}
-
-body {
-  color: var(--black);
-  font-family: 'Space Grotesk', Arial, sans-serif;
-}
-
-.page {
-  display: grid;
-  grid-template-rows: auto minmax(0, 1fr) auto;
-  height: 100svh;
-  min-height: 100svh;
-  overflow: hidden;
-}
-
-header,
-main,
-footer {
-  width: min(100%, 1440px);
-  margin: auto;
-}
-
-.site-header {
+.homepage-main {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 28px clamp(24px, 5vw, 74px);
-}
-
-.brand {
-  font-size: 15px;
-  font-weight: 700;
-  letter-spacing: -.045em;
-  text-transform: uppercase;
-}
-
-.status {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 9px 15px 9px 13px;
-  border-radius: 999px;
-  background: var(--black);
-  color: #fff;
-  font: 11px 'DM Mono', monospace;
-  text-transform: uppercase;
-}
-
-.dot {
-  width: 9px;
-  height: 9px;
-  border-radius: 50%;
-  background: var(--cyan);
-  box-shadow: 0 0 13px rgba(102, 220, 232, .8);
-}
-
-main {
   min-height: 0;
+  align-items: center;
+  justify-content: center;
+  padding-top: 10px;
+  padding-bottom: 22px;
+}
+
+.homepage-section {
   display: flex;
+  width: min(100%, 980px);
+  min-height: calc(100vh - 190px);
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 10px clamp(20px, 5vw, 72px) 22px;
+  padding: clamp(24px, 4vw, 44px);
   text-align: center;
 }
 
@@ -88,7 +29,7 @@ main {
   isolation: isolate;
 }
 
-.hero-3d:after {
+.hero-3d::after {
   position: absolute;
   z-index: -1;
   bottom: 11%;
@@ -99,7 +40,7 @@ main {
   background: rgba(0, 0, 0, .16);
   filter: blur(17px);
   transform: translateX(-50%) scaleY(.48);
-  content: '';
+  content: "";
 }
 
 #logo3d,
@@ -112,11 +53,32 @@ main {
 
 .claim {
   max-width: 590px;
-  margin: 2px auto 22px;
+  margin: 14px auto 0;
+  color: var(--black);
   font-size: clamp(19px, 2.1vw, 25px);
   font-weight: 500;
   letter-spacing: -.025em;
   line-height: 1.4;
+}
+
+.claim-main,
+.claim-sub {
+  display: block;
+}
+
+.claim-main {
+  font-size: clamp(1.55rem, 3.2vw, 2.55rem);
+  font-weight: 700;
+  letter-spacing: -.045em;
+  line-height: 1.1;
+}
+
+.claim-sub {
+  margin-top: .55rem;
+  font-size: clamp(.95rem, 1.45vw, 1.15rem);
+  font-weight: 500;
+  letter-spacing: -.015em;
+  opacity: .68;
 }
 
 .icon-row {
@@ -124,6 +86,7 @@ main {
   flex-wrap: wrap;
   justify-content: center;
   gap: 16px;
+  margin-top: 36px;
 }
 
 .icon-button {
@@ -133,9 +96,10 @@ main {
   height: 76px;
   border: 1px solid var(--line);
   border-radius: 20px;
-  background: #fff;
-  color: var(--black);
+  background: rgba(255, 255, 255, .82);
   box-shadow: 0 4px 12px rgba(0, 0, 0, .07);
+  color: var(--black);
+  cursor: pointer;
   transition: transform .18s ease, box-shadow .18s ease;
 }
 
@@ -155,72 +119,22 @@ main {
   height: 32px;
 }
 
-.site-footer {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 18px;
-  margin-top: auto;
-  padding: 20px clamp(24px, 5vw, 74px) 22px;
-  border-top: 1px solid var(--line);
-  font: 11px 'DM Mono', monospace;
-}
-
-.site-footer nav {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-end;
-  gap: 16px;
-}
-
-.site-footer a {
-  color: var(--black);
-  text-decoration: none;
-}
-
-.site-footer a:hover {
-  text-decoration: underline;
-}
-
-@media (max-width: 600px) {
-  .page {
-    height: auto;
-    min-height: 100svh;
-    overflow: visible;
-  }
-
-  .site-header {
-    padding-top: 22px;
+@media (max-width: 680px) {
+  .homepage-main {
+    padding-top: 4px;
     padding-bottom: 20px;
   }
 
-  .brand {
-    font-size: 14px;
-  }
-
-  .status {
-    gap: 8px;
-    padding: 8px 12px;
-    font-size: 10px;
-  }
-
-  .dot {
-    width: 8px;
-    height: 8px;
-  }
-
-  main {
-    justify-content: flex-start;
-    min-height: 100svh;
-        padding-top: 8px;
-        padding-bottom: 40px;
+  .homepage-section {
+    min-height: calc(100svh - 165px);
+    padding: 18px 0 26px;
   }
 
   .hero-3d {
     height: clamp(300px, 92vw, 410px);
   }
 
-  .hero-3d:after {
+  .hero-3d::after {
     bottom: 9%;
     width: 210px;
   }
@@ -228,12 +142,12 @@ main {
   .claim {
     max-width: 400px;
     margin-top: 0;
-    margin-bottom: 29px;
     font-size: clamp(18px, 5.1vw, 22px);
   }
 
   .icon-row {
     gap: 11px;
+    margin-top: 34px;
   }
 
   .icon-button {
@@ -250,18 +164,5 @@ main {
   .icon-button .play {
     width: 29px;
     height: 32px;
-  }
-
-  .site-footer {
-    flex-direction: column;
-    align-items: flex-start;
-    margin-top: 0px;
-    padding-top: 40px;
-    padding-bottom: 26px;
-  }
-
-  .site-footer nav {
-    justify-content: flex-start;
-    gap: 12px;
   }
 }
