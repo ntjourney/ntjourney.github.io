@@ -420,8 +420,25 @@
       document.body.style.overflow = "";
     };
 
-    document
+     document
       .querySelectorAll("[data-store-modal]")
       .forEach((button) => {
         button.addEventListener("click", openStoreModal);
       });
+
+    document
+      .querySelectorAll("[data-close-modal]")
+      .forEach((button) => {
+        button.addEventListener("click", closeStoreModal);
+      });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && !storeModal.hidden) {
+        closeStoreModal();
+      }
+    });
+  </script>
+
+  <script type="module" src="hero-3d.js"></script>
+</body>
+</html>
