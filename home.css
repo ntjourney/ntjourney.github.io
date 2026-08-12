@@ -166,3 +166,26 @@
     height: 32px;
   }
 }
+
+/* German footer: prevent late CSS positioning overrides */
+.site-footer .footer-inner {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  gap: 14px !important;
+}
+
+.site-footer .language-switch {
+  position: static !important;
+  inset: auto !important;
+  display: flex !important;
+  align-items: center !important;
+  margin: 0 !important;
+  transform: none !important;
+}
+
+.site-footer .footer-top {
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  justify-content: flex-start !important;
+}
