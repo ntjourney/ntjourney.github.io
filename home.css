@@ -214,3 +214,16 @@
     justify-self: end;
   }
 }
+/* Aktive Sprache im deutschen Footer eindeutig hervorheben */
+.site-footer .language-switch .language-active {
+  color: #050505 !important;
+  font-weight: 700 !important;
+  opacity: 1 !important;
+}
+
+/* Inaktive Sprache bleibt bewusst zurückhaltend */
+.site-footer .language-switch a {
+  color: #777 !important;
+  font-weight: 400 !important;
+  opacity: 1 !important;
+}
