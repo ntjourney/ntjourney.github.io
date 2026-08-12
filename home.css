@@ -231,3 +231,10 @@ html body .site-footer .footer-inner .language-switch a:not(.language-active) {
   font-weight: 400 !important;
   opacity: 1 !important;
 }
+/* Deutsche Seite: erstes Element ist DE und immer aktiv */
+.site-footer .language-switch > :first-child {
+  color: #000 !important;
+  font-weight: 700 !important;
+  opacity: 1 !important;
+  text-decoration: none !important;
+}
