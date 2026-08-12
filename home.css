@@ -209,20 +209,24 @@
     justify-self: center;
   }
 
-  .site-footer .footer-links {
+    .site-footer .footer-links {
     grid-column: 3;
     justify-self: end;
   }
 }
-/* Aktive Sprache im deutschen Footer eindeutig hervorheben */
-.site-footer .language-switch .language-active {
+
+/* Aktive Sprache: Deutsch immer tiefschwarz und fett */
+html body .site-footer .footer-inner .language-switch span.language-active,
+html body .site-footer .footer-inner .language-switch a.language-active,
+html body .site-footer .footer-inner .language-switch [aria-current="page"] {
   color: #050505 !important;
   font-weight: 700 !important;
   opacity: 1 !important;
+  text-decoration: none !important;
 }
 
-/* Inaktive Sprache bleibt bewusst zurückhaltend */
-.site-footer .language-switch a {
+/* Inaktive Sprache bleibt grau */
+html body .site-footer .footer-inner .language-switch a:not(.language-active) {
   color: #777 !important;
   font-weight: 400 !important;
   opacity: 1 !important;
